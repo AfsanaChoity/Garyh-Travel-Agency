@@ -1,151 +1,188 @@
 import { Box, TextField, InputAdornment } from '@mui/material';
 import { FaCar, FaUser, FaCalendarAlt } from 'react-icons/fa';
 import imag from "../../assets/background1.jpg"
+import "./Home.css"
 
 const Home = () => {
   return (
     <div>
-        <Box className="mx-20 -mt-32 relative z-10">
-      <Box
-        className="p-10 border rounded-xl bg-white shadow-md"
-        component="form"
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 2,
-          justifyContent: 'space-around',
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField
-          required
-          id="location"
-          label="Enter City or Location"
-          defaultValue="Pune, Maharashtra"
-          InputLabelProps={{ shrink: true, required: false }}
-          sx={{ width: '48ch', m: 1 }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <FaCar style={{ color: '#000' }} />
-              </InputAdornment>
-            ),
+      <Box className="mx-20 -mt-32 relative z-10">
+        <Box
+          className="p-10  rounded-xl bg-white shadow-md"
+          component="form"
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 2,
+            justifyContent: 'space-around',
           }}
-        />
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            required
+            id="location"
+            label="Enter City or Location"
+            defaultValue="Pune, Maharashtra"
+            InputLabelProps={{ shrink: true, required: false }}
+            sx={{ width: '48ch', m: 1 }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <FaCar style={{ color: '#000' }} />
+                </InputAdornment>
+              ),
+            }}
+          />
 
-        <TextField
-          required
-          id="check-in"
-          label="Check In"
-          defaultValue="Fri 12/2"
-          InputLabelProps={{ shrink: true, required: false }}
-          sx={{ width: '25ch', m: 1 }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <FaCalendarAlt style={{ color: '#000' }} />
-              </InputAdornment>
-            ),
-          }}
-        />
+          <TextField
+            required
+            id="check-in"
+            label="Check In"
+            defaultValue="Fri 12/2"
+            InputLabelProps={{ shrink: true, required: false }}
+            sx={{ width: '25ch', m: 1 }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <FaCalendarAlt style={{ color: '#000' }} />
+                </InputAdornment>
+              ),
+            }}
+          />
 
-        <TextField
-          required
-          id="check-out"
-          label="Check Out"
-          defaultValue="Sun 12/4"
-          InputLabelProps={{ shrink: true, required: false }}
-          sx={{ width: '25ch', m: 1 }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <FaCalendarAlt style={{ color: '#000' }} />
-              </InputAdornment>
-            ),
-          }}
-        />
+          <TextField
+            required
+            id="check-out"
+            label="Check Out"
+            defaultValue="Sun 12/4"
+            InputLabelProps={{ shrink: true, required: false }}
+            sx={{ width: '25ch', m: 1 }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <FaCalendarAlt style={{ color: '#000' }} />
+                </InputAdornment>
+              ),
+            }}
+          />
 
-        <Box sx={{ m: 1 }}>
-          <button className="border border-gray-300 rounded-xl text-black px-4 py-2 mt-2 font-bold">
-            2 Night
-          </button>
-        </Box>
+          <Box sx={{ m: 1 }}>
+            <button className="border border-gray-300 rounded-xl text-black px-4 py-2 mt-2 font-bold">
+              2 Night
+            </button>
+          </Box>
 
-        <TextField
-          required
-          id="guests"
-          label="Rooms & Guests"
-          defaultValue="1 room, 2 guests"
-          InputLabelProps={{ shrink: true, required: false }}
-          sx={{ width: '25ch', m: 1 }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <FaUser style={{ color: '#000' }} />
-              </InputAdornment>
-            ),
-          }}
-        />
+          <TextField
+            required
+            id="guests"
+            label="Rooms & Guests"
+            defaultValue="1 room, 2 guests"
+            InputLabelProps={{ shrink: true, required: false }}
+            sx={{ width: '25ch', m: 1 }}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <FaUser style={{ color: '#000' }} />
+                </InputAdornment>
+              ),
+            }}
+          />
 
-        <Box sx={{ width: '100%', mt: 4 }}>
-          <button
-            className="text-white py-3 rounded w-full"
-            style={{ backgroundColor: '#468F9D' }}
-          >
-            Submit
-          </button>
+          <Box sx={{ width: '100%', mt: 4 }}>
+            <button
+              className="text-white py-3 rounded w-full"
+              style={{ backgroundColor: '#468F9D' }}
+            >
+              Submit
+            </button>
+          </Box>
         </Box>
       </Box>
-    </Box>
-    <div>
-        <div className="flex flex-wrap gap-12 px-10 py-10 justify-center items-start">
-  {/* Left Section */}
-  <div className="flex flex-col gap-6 w-full md:w-1/2">
-    {/* 5-Image Layout */}
-    <div className="flex items-center justify-center gap-6">
-      {/* Left 2 images */}
-      <div className="flex flex-col gap-4">
-        <img src={imag} alt="Left 1" className="w-24 h-24 object-cover rounded" />
-        <img src={imag} alt="Left 2" className="w-24 h-24 object-cover rounded" />
-      </div>
-
-      {/* Center image */}
-      <img src={imag} alt="Center" className="w-48 h-48 object-cover rounded-lg shadow" />
-
-      {/* Right 2 images */}
-      <div className="flex flex-col gap-4">
-        <img src={imag} alt="Right 1" className="w-24 h-24 object-cover rounded" />
-        <img src={imag} alt="Right 2" className="w-24 h-24 object-cover rounded" />
-      </div>
-    </div>
-
-    {/* Text + Button */}
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mt-4">
       <div>
-        <h2 className="text-xl font-semibold mb-2">Gallery Section</h2>
-        <p className="text-gray-600">Browse beautiful spots and destinations.</p>
-      </div>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded">Explore</button>
-    </div>
-  </div>
+        <div className="w-full pl-30 pr-30 mt-15 mb-10">
+          <div className="flex w-full gap-6">
+            {/* Left Section */}
+            <div className="flex flex-col w-1/2 gap-6">
+              {/* Image + Text Block Combined */}
+              <div className="flex flex-col rounded-sm overflow-hidden border border-gray-200">
+                {/* Image Grid Block - no padding */}
+                <div className="h-80 w-full flex gap-2 bg-white">
+                  {/* Left 2 images - 25% width, full height, no padding */}
+                  <div className="flex flex-col gap-3 w-1/4 h-full">
+                    <img src={imag} alt="Left 1" className="w-full h-1/2 object-cover" />
+                    <img src={imag} alt="Left 2" className="w-full h-1/2 object-cover" />
+                  </div>
 
-  {/* Right Section */}
-  <div className="flex flex-col gap-6 w-full md:w-1/2">
-    {/* Single Image */}
-    <img src={imag} alt="Featured" className="w-full h-64 object-cover rounded-lg shadow" />
+                  {/* Center image - 50% width, full height */}
+                  <img src={imag} alt="Center" className="w-1/2 h-full object-cover" />
 
-    {/* Text + Button */}
-    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-      <div>
-        <h2 className="text-xl font-semibold mb-2">Featured Location</h2>
-        <p className="text-gray-600">Discover our handpicked destination just for you.</p>
+                  {/* Right 2 images - 25% width, full height, no padding */}
+                  <div className="flex flex-col gap-3 w-1/4 h-full">
+                    <img src={imag} alt="Right 1" className="w-full h-1/2 object-cover " />
+                    <img src={imag} alt="Right 2" className="w-full h-1/2 object-cover" />
+                  </div>
+                </div>
+
+                {/* Text + Button */}
+                <div className="bg-gray-100 px-6 py-6 flex flex-col justify-between h-48 rounded-b-lg" style={{ backgroundColor: '#468F9D' }}>
+                  <div>
+                    <h2 className="text-md font-semibold mb-2 text-white">Only On Travelel</h2>
+                    <p className="text-white font-2xl">Explore 120,000+ campsites you won’t find <br /> anywhere else</p>
+                  </div>
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section */}
+            <div className="flex flex-col w-1/2 gap-6">
+              {/* Image + Text Block Combined */}
+              <div className="flex flex-col rounded-sm overflow-hidden border border-gray-200">
+                {/* Single Image */}
+                <img src={imag} alt="Featured" className="h-80 w-full object-cover rounded-t-lg" />
+
+                {/* Text + Button */}
+                <div className="bg-gray-100 px-6 py-6 flex flex-col justify-between h-48 rounded-b-lg" style={{ backgroundColor: '#468F9D' }}>
+                  <div>
+                    <h2 className="text-md font-semibold mb-2 text-white">Fourth of July</h2>
+                    <p className="text-white font-2xl">Snag a last minute fourth of july campsite</p>
+                  </div>
+                  <button className=" text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <button className="bg-green-600 text-white px-4 py-2 rounded">Learn More</button>
-    </div>
-  </div>
-</div>
-    </div>
+      <div
+        className="mr-30 ml-30 h-[700px] bg-cover bg-center flex items-end justify-start pl-[54px] pb-[25px]"
+        style={{
+          backgroundImage: `url(${imag})`,
+        }}
+      >
+        {/* Styled Button */}
+        <button
+          className="flex flex-col items-start justify-center gap-[10px] text-white text-lg font-semibold"
+          style={{
+            width: '513px',
+            height: '334px',
+            padding: '25px 54px',
+            borderRadius: '54px',
+            backgroundColor: '#468F9D',
+          }}
+        >
+          <span className='text-left text-xl'>Grow Your campground or <br /> glamping business</span>
+          <span className="text-sm text-left">Host our community of good- natured <br />
+            RVers and campers at your property. <br />
+            Campground, or RV resort.F</span>
+
+          {/* Small Button Inside */}
+          <button className='Button'>
+            Start Hosting
+          </button>
+        </button>
+      </div>
     </div>
   );
 };

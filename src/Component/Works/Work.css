@@ -1,0 +1,11 @@
+.card{
+    color: black;
+    text-align: center;
+    font-weight: 400;
+}
+.bg-white{
+    font-size: large;
+    align-items: center;
+    justify-content: center;
+    padding-top: 130px;
+}
