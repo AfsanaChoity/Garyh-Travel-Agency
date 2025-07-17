@@ -189,6 +189,115 @@ const Home = () => {
 
 export default Home;
 
+// import React, { useState } from 'react';
+
+// function App() {
+//   const [page, setPage] = useState('login');
+
+//   // Handlers to navigate between pages
+//   const goToForgotPassword = () => setPage('forgotPassword');
+//   const goToCheckEmail = () => setPage('checkEmail');
+//   const goToResetPassword = () => setPage('resetPassword');
+//   const goToConfirmation = () => setPage('confirmation');
+//   const goToHome = () => setPage('home');
+
+//   // State for form inputs
+//   const [email, setEmail] = useState('');
+//   const [newPassword, setNewPassword] = useState('');
+//   const [confirmPassword, setConfirmPassword] = useState('');
+
+//   return (
+//     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
+//       {page === 'login' && (
+//         <div style={{ backgroundImage: 'url(https://via.placeholder.com/800x600)', padding: '50px', backgroundSize: 'cover' }}>
+//           <h2>Login Page</h2>
+//           <form>
+//             <div>
+//               <label>Email or Username:</label><br />
+//               <input type="text" placeholder="Enter email or username" />
+//             </div>
+//             <div>
+//               <label>Password:</label><br />
+//               <input type="password" placeholder="Enter password" />
+//             </div>
+//             <button type="button">Login</button>
+//           </form>
+//           <p style={{ marginTop: '20px' }}>
+//             <a href="#" onClick={(e) => { e.preventDefault(); goToForgotPassword(); }}>Forget your password?</a>
+//           </p>
+//         </div>
+//       )}
+
+//       {page === 'forgotPassword' && (
+//         <div style={{ backgroundImage: 'url(https://via.placeholder.com/800x600)', padding: '50px', backgroundSize: 'cover' }}>
+//           <h2>Reset Password</h2>
+//           <p>Enter your email to reset your password</p>
+//           <input
+//             type="email"
+//             placeholder="Enter your email"
+//             value={email}
+//             onChange={(e) => setEmail(e.target.value)}
+//           />
+//           <br /><br />
+//           <button onClick={() => { goToCheckEmail(); }}>Reset Password</button>
+//         </div>
+//       )}
+
+//       {page === 'checkEmail' && (
+//         <div style={{ backgroundImage: 'url(https://via.placeholder.com/800x600)', padding: '50px', backgroundSize: 'cover' }}>
+//           <h2>Check Your Email</h2>
+//           <p>Check your email for password reset link.</p>
+//           <button onClick={() => { goToResetPassword(); }}>Open Email</button>
+//         </div>
+//       )}
+
+//       {page === 'resetPassword' && (
+//         <div style={{ backgroundImage: 'url(https://via.placeholder.com/800x600)', padding: '50px', backgroundSize: 'cover' }}>
+//           <h2>Set New Password</h2>
+//           <form onSubmit={(e) => { e.preventDefault(); goToConfirmation(); }}>
+//             <div>
+//               <label>New Password:</label><br />
+//               <input
+//                 type="password"
+//                 value={newPassword}
+//                 onChange={(e) => setNewPassword(e.target.value)}
+
+//               />
+//             </div>
+//             <div>
+//               <label>Confirm Password:</label><br />
+//               <input
+//                 type="password"
+//                 value={confirmPassword}
+//                 onChange={(e) => setConfirmPassword(e.target.value)}
+  
+//               />
+//             </div>
+//             <br />
+//             <button type="submit">Reset Pass</button>
+//           </form>
+//         </div>
+//       )}
+
+//       {page === 'confirmation' && (
+//         <div style={{ backgroundImage: 'url(https://via.placeholder.com/800x600)', padding: '50px', backgroundSize: 'cover' }}>
+//           <h2>Your password has been reset successfully</h2>
+//           <button onClick={() => { goToHome(); }}>Continue</button>
+//         </div>
+//       )}
+
+//       {page === 'home' && (
+//         <div style={{ padding: '50px' }}>
+//           <h2>Home Page</h2>
+//           <p>Welcome to the website!</p>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
+
 
 
 
