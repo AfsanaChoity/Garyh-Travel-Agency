@@ -2,11 +2,15 @@ import { Box, TextField, InputAdornment } from '@mui/material';
 import { FaCar, FaUser, FaCalendarAlt } from 'react-icons/fa';
 import imag from "../../assets/background1.jpg"
 import "./Home.css"
+import pic1 from "../../assets/pic1.jpg"
+import pic3 from "../../assets/pic3.jpg"
+import pic2 from "../../assets/pic2.jpg"
+import pic4 from "../../assets/pic4.jpg"
 
 const Home = () => {
   return (
     <div>
-      <Box className="mx-20 -mt-32 relative z-10">
+      <Box className="mx-20 -mt-42 relative z-10">
         <Box
           className="p-10  rounded-xl bg-white shadow-md"
           component="form"
@@ -67,8 +71,8 @@ const Home = () => {
             }}
           />
 
-          <Box sx={{ m: 1 }}>
-            <button className="border border-gray-300 rounded-xl text-black px-4 py-2 mt-2 font-bold">
+          <Box sx={{ m: 2 }}>
+            <button className="border border-gray-300 rounded-xl text-black px-4 py-2  font-bold">
               2 Night
             </button>
           </Box>
@@ -100,7 +104,7 @@ const Home = () => {
         </Box>
       </Box>
       <div>
-        <div className="w-full pl-30 pr-30 mt-15 mb-10">
+        <div className="w-full pl-30 pr-30 mt-20 mb-10">
           <div className="flex w-full gap-6">
             {/* Left Section */}
             <div className="flex flex-col w-1/2 gap-6">
@@ -110,20 +114,17 @@ const Home = () => {
                 <div className="h-80 w-full flex gap-2 bg-white">
                   {/* Left 2 images - 25% width, full height, no padding */}
                   <div className="flex flex-col gap-3 w-1/4 h-full">
-                    <img src={imag} alt="Left 1" className="w-full h-1/2 object-cover" />
-                    <img src={imag} alt="Left 2" className="w-full h-1/2 object-cover" />
+                    <img src={pic3} alt="Left 1" className="w-full h-1/2 object-cover" />
+                    <img src={pic2} alt="Left 2" className="w-full h-1/2 object-cover" />
                   </div>
-
                   {/* Center image - 50% width, full height */}
-                  <img src={imag} alt="Center" className="w-1/2 h-full object-cover" />
-
+                  <img src={pic1} alt="Center" className="w-1/2 h-full object-cover" />
                   {/* Right 2 images - 25% width, full height, no padding */}
                   <div className="flex flex-col gap-3 w-1/4 h-full">
-                    <img src={imag} alt="Right 1" className="w-full h-1/2 object-cover " />
-                    <img src={imag} alt="Right 2" className="w-full h-1/2 object-cover" />
+                    <img src={pic3} alt="Right 1" className="w-full h-1/2 object-cover " />
+                    <img src={pic2} alt="Right 2" className="w-full h-1/2 object-cover" />
                   </div>
                 </div>
-
                 {/* Text + Button */}
                 <div className="bg-gray-100 px-6 py-6 flex flex-col justify-between h-48 rounded-b-lg" style={{ backgroundColor: '#468F9D' }}>
                   <div>
@@ -134,7 +135,6 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
             {/* Right Section */}
             <div className="flex flex-col w-1/2 gap-6">
               {/* Image + Text Block Combined */}
@@ -146,7 +146,7 @@ const Home = () => {
                 <div className="bg-gray-100 px-6 py-6 flex flex-col justify-between h-48 rounded-b-lg" style={{ backgroundColor: '#468F9D' }}>
                   <div>
                     <h2 className="text-md font-semibold mb-2 text-white">Fourth of July</h2>
-                    <p className="text-white font-2xl">Snag a last minute fourth of july campsite</p>
+                    <p className="text-white font-2xl">Snag a last minute fourth of july campsite</p>  
                   </div>
                   <button className=" text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</button>
                 </div>
@@ -158,7 +158,7 @@ const Home = () => {
       <div
         className="mr-30 ml-30 h-[700px] bg-cover bg-center flex items-end justify-start pl-[54px] pb-[25px]"
         style={{
-          backgroundImage: `url(${imag})`,
+          backgroundImage: `url(${pic4})`,
         }}
       >
         {/* Styled Button */}

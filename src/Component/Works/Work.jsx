@@ -6,6 +6,7 @@ import { LiaCheckSolid } from "react-icons/lia";
 import { FaStar } from "react-icons/fa";
 import people1 from "../../assets/people1.png"
 import people2 from "../../assets/people2.png"
+import { TbBackground } from 'react-icons/tb';
 
 const Works = () => {
     return (
@@ -16,7 +17,7 @@ const Works = () => {
                 </div>
                 <div className="flex items-center justify-center p-8">
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-8xl w-full mx-20">
 
 
                         {/* Card 1 */}
@@ -44,8 +45,8 @@ const Works = () => {
             </div>
             <div>
                 <h1 className='flex justify-center items-center mt-10 mb-10 text-4xl font-bold'>Why RVnBo?</h1>
-                <div className="flex justify-center items-center gap-5 h-48 max-w-6xl mx-auto">
-                    <div className="flex-1 p-4  h-full flex flex-col gap-10 justify-center text-left text-3xl">
+                <div className="flex justify-center items-center gap-5 h-48 max-w-10xl mx-20">
+                    <div className="flex-1 p-4  h-full flex flex-col gap-10 justify-center text-left text-3xl ml-8">
                         <h2 className='flex'><LiaCheckSolid className='text-4xl mr-3' />Verified landowners</h2>
                         <h2 className='flex'><LiaCheckSolid className='text-4xl mr-3' />Stay off-grid or with lice</h2>
                     </div>
@@ -57,8 +58,11 @@ const Works = () => {
             </div>
             <div>
 
-
+                <div className='text-center text-5xl mt-9 pt-10 font-semibold'>
+                    <p>Don’t just take our words</p>
+                </div>
                 <div className="flex gap-6 w-full p-40">
+                    
                     {/* Card 1 */}
                     <div className="flex w-1/2 p-4 items-center gap-4">
                         <img src={people1} alt="Logo" className="w-84 h-84 object-cover rounded" />
@@ -70,11 +74,11 @@ const Works = () => {
                         <div className="flex-1 flex flex-col justify-between text-left h-full py-2">
                             {/* Star Row */}
                             <div className="flex gap-1 text-yellow-500">
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
                             </div>
 
                             {/* Title */}
@@ -95,12 +99,12 @@ const Works = () => {
                         /> */}
                         <div className="flex-1 flex flex-col justify-between text-left h-full py-2">
                             {/* Star Row */}
-                            <div className="flex gap-1 text-yellow-500">
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
-                                <span><FaStar /></span>
+                            <div className="flex gap-1" style={{Color: '#1E91B6' }}>
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
+                                <FaStar style={{ color: '#1E91B6' }} />
                             </div>
                             {/* Title */}
                             <h3 className="text-lg font-semibold">"We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want."</h3>
