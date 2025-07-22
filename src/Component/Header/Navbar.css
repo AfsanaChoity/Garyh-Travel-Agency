@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     background-color:#468F9D;
-    padding: 15px 7%;
+    /* padding: 15px 7%; */
 }
 ul{
     flex: 1;

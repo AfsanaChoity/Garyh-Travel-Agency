@@ -10,11 +10,11 @@ import Creek from './Component/Creek/Creek';
 const App = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar>
       <Home></Home>
       <Roadmap></Roadmap>
       <Works></Works>
-      <Footer></Footer>
+      <Footer></Footer> */}
     </div>
   );
 };

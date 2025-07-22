@@ -15,9 +15,9 @@ const Works = () => {
                 <div className='text-center mt-15 mb-10 text-3xl font-bold'>
                     <h1>How It Works</h1>
                 </div>
-                <div className="flex items-center justify-center p-8">
+                <div className="flex items-center justify-center md:px-10">
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-8xl w-full mx-20">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-8xl w-full mx-10">
 
 
                         {/* Card 1 */}
@@ -43,35 +43,35 @@ const Works = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div >
+
+
                 <h1 className='flex justify-center items-center mt-10 mb-10 text-4xl font-bold'>Why RVnBo?</h1>
-                <div className="flex justify-center items-center gap-5 h-48 max-w-10xl mx-20">
-                    <div className="flex-1 p-4  h-full flex flex-col gap-10 justify-center text-left text-3xl ml-8">
-                        <h2 className='flex'><LiaCheckSolid className='text-4xl mr-3' />Verified landowners</h2>
-                        <h2 className='flex'><LiaCheckSolid className='text-4xl mr-3' />Stay off-grid or with lice</h2>
-                    </div>
-                    <div className="flex-1 p-4  h-full flex flex-col gap-10 justify-center text-left text-3xl">
-                        <h2 className='flex'><LiaCheckSolid className='text-4xl mr-3' />Secure GPS navigation</h2>
-                        <h2 className='flex'><LiaCheckSolid className='text-4xl mr-3' />Affordable ad with hookups</h2>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 mx-10 md:mx-20 gap-4">
+                    <h2 className='flex text-xl md:text-2xl'><LiaCheckSolid className='text-2xl md:text-4xl' />Verified landowners</h2>
+                    <h2 className='flex text-xl md:text-2xl'><LiaCheckSolid className='text-2xl md:text-4xl' />Stay off-grid or with lice</h2>
+                    <h2 className='flex text-xl md:text-2xl'><LiaCheckSolid className='text-2xl md:text-4xl' />Secure GPS navigation</h2>
+                    <h2 className='flex text-xl md:text-2xl'><LiaCheckSolid className='text-2xl md:text-4xl' />Affordable ad with hookups</h2>
+                    
+                    
                 </div>
             </div>
             <div>
 
-                <div className='text-center text-5xl mt-9 pt-10 font-semibold'>
+                <div className='text-center text-5xl mt-9 pt-10 font-semibold mb-10'>
                     <p>Don’t just take our words</p>
                 </div>
-                <div className="flex gap-6 w-full p-40">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mx-20 mx-4">
                     
                     {/* Card 1 */}
-                    <div className="flex w-1/2 p-4 items-center gap-4">
-                        <img src={people1} alt="Logo" className="w-84 h-84 object-cover rounded" />
+                    <div className="lg:flex lg:gap-4">
+                        <img src={people1} alt="Logo" className="lg:w-[50%] w-[100%] h-84  object-cover rounded" />
                         {/* <img
                             src="https://via.placeholder.com/100"
                             alt="Example 1"
                             className="w-24 h-24 object-cover rounded"
                         /> */}
-                        <div className="flex-1 flex flex-col justify-between text-left h-full py-2">
+                        <div className="mt-4 lg:w-[40%]">
                             {/* Star Row */}
                             <div className="flex gap-1 text-yellow-500">
                                 <FaStar style={{ color: '#1E91B6' }} />
@@ -90,14 +90,14 @@ const Works = () => {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="flex w-1/2 p-4 items-center gap-4">
-                        <img src={people2} alt="Logo" className="w-84 h-84 object-cover rounded" />
+                    <div className="lg:flex lg:gap-4">
+                        <img src={people2} alt="Logo" className="lg:w-[50%] w-[100%] h-84  object-cover rounded" />
                         {/* <img
                             src="https://via.placeholder.com/100"
                             alt="Example 1"
                             className="w-24 h-24 object-cover rounded"
                         /> */}
-                        <div className="flex-1 flex flex-col justify-between text-left h-full py-2">
+                        <div className="mt-4 lg:w-[40%]">
                             {/* Star Row */}
                             <div className="flex gap-1" style={{Color: '#1E91B6' }}>
                                 <FaStar style={{ color: '#1E91B6' }} />
