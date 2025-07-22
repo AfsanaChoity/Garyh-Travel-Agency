@@ -6,6 +6,7 @@ import search from '../../assets/images/search.png'
 import truck from '../../assets/images/Truck.png'
 import moon from '../../assets/images/moon.png'
 import backgroundImg2 from '../../assets/images/RV_spot_img.jpg'
+import FAQs from './FAQs/FAQs'
 export default function HowItWork() {
   return (
     <div>
@@ -25,16 +26,28 @@ export default function HowItWork() {
 
       </div>
 
+      {/* FAQs */}
+      <div className='text-center my-10 lg:my-20'>
+        <h2 className='text-2xl font-semibold lg:text-4xl '>Frequently Asked Questions</h2>
+        <div className='mx-4 lg:mx-20'>
+          <FAQs></FAQs>
+        </div>
+      </div>
+
       {/* Find RV spot now section */}
-      <div>
-        <WorkPageBanner 
-        backgroundImg={backgroundImg2} 
-        heading={"Your next adventure is one click away"} 
-        subheading={""}
-        buttonText={"Find RV Spot Now"}>
-        containerClassName={"mx-10"}
+      <div >
+        <WorkPageBanner
+          backgroundImg={backgroundImg2}
+          heading={"Your next adventure is one click away"}
+          subheading={""}
+          buttonText={"Find RV Spot Now"}
+          containerClassName="mx-4 lg:mx-20"
+          >
+          
         </WorkPageBanner>
       </div>
+
+
 
     </div>
   )
