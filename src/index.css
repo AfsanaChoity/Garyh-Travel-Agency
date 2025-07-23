@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+/* Import Leaflet CSS for proper map rendering */
+@import 'leaflet/dist/leaflet.css';
 
 /* App.css or index.css */
 body {

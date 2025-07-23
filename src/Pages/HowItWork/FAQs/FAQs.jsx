@@ -55,8 +55,8 @@ export default function FAQs() {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography sx={{ fontSize: '0.85rem', color: '#555' }}>
-              {faq.answer}
+            <Typography sx={{ fontSize: '0.85rem', color: '#555', textAlign: 'start' }}>
+             <span style={{fontWeight: 'bold'}}>Ans:</span> {faq.answer}
             </Typography>
           </AccordionDetails>
         </Accordion>

@@ -28,18 +28,18 @@ const Navbar = () => {
 
             <ul className="hidden md:flex gap-2 items-center font-medium">
               <li><Link to="/">Home</Link></li>
-              <li>Explore</li>
+              <li><Link to="/explore">Explore</Link></li>
               <li><Link to="/how-it-works">How it works</Link></li>
-              <li>Testimonials</li>
+              <li> <Link to="/about">About Us</Link></li> 
               <li>Log In</li>
             </ul>
           </div>
 
           {/* Sign Up button */}
           <div className="hidden md:block">
-            <button className="Button bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+            <Link to="/sign-up" className="Button bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -61,14 +61,14 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <ul className="md:hidden flex flex-col gap-4 p-4 bg-[#468F9D] shadow-lg absolute w-full z-20">
           <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-          <li>Explore</li>
+          <li><Link to="/explore" onClick={toggleMenu}>Explore</Link></li>
            <li><Link to="/how-it-works" onClick={toggleMenu}>How it works</Link></li>
-          <li>Testimonials</li>
+          <li> <Link to="/about">About Us</Link></li>           
           <li>Log In</li>
           <li>
-            <button className="Button bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full">
+             <Link to="/sign-up" className="Button bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
               Sign Up
-            </button>
+            </Link>
           </li>
         </ul>
       )}

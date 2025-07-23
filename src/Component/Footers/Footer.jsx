@@ -3,7 +3,7 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/f
 
 const Footer = () => {
     return (
-        <footer className="bg-[#468F9D]  w-full mt-25 pt-10 pb-6">
+        <footer className="bg-[#468F9D] mt-10 lg:mt-20  w-full  pt-14 pb-10">
               <div className="mx-[8%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0">
                 
                 {/* Column 1 */}
@@ -24,7 +24,7 @@ const Footer = () => {
                 {/* Column 2 */}
                 <div className=''>
                   <h1 className="text-xl font-bold text-white flex justify-center mb-4">Company</h1>
-                  <div className=" flex flex-col space-y-4 text-white text-center text-sm">
+                  <div className=" flex flex-col space-y-3 lg:space-y-6 text-white text-center text-sm">
                     <p>About</p>
                     <p>Features</p>
                     <p>Works</p>
@@ -36,7 +36,7 @@ const Footer = () => {
                  {/* Column 3 */}
                 <div className=''>
                   <h1 className="text-xl font-bold text-white flex justify-center mb-4">Help</h1>
-                  <div className=" flex flex-col space-y-4 text-white text-center text-sm">
+                  <div className=" flex flex-col space-y-3 lg:space-y-6 text-white text-center text-sm">
                     <p>Customer Support</p>
                     <p>Delivery Details</p>
                     <p>Terms & Conditions</p>
@@ -48,7 +48,7 @@ const Footer = () => {
                 {/* Column 4 */}
                 <div className=' '>
                   <h1 className="text-xl font-bold text-white flex justify-center mb-4">Resources</h1>
-                  <div className="flex flex-col space-y-4 text-white text-center text-sm ">
+                  <div className="flex flex-col space-y-3 lg:space-y-6 text-white text-center text-sm ">
                     <p>Free eBooks</p>
                     <p>Development Tutorial</p>
                     <p>How to - Blog</p>

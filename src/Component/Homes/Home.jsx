@@ -6,6 +6,7 @@ import pic1 from "../../assets/pic1.jpg"
 import pic3 from "../../assets/pic3.jpg"
 import pic2 from "../../assets/pic2.jpg"
 import pic4 from "../../assets/pic4.jpg"
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -138,7 +139,7 @@ const Home = () => {
                     <h2 className="text-md font-semibold mb-2 text-white">Only On Travelel</h2>
                     <p className="text-white font-2xl">Explore 120,000+ campsites you won’t find anywhere else </p>
                   </div>
-                  <button className="text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</button>
+                  <Link to="/booking" className=" text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</Link>
                 </div>
               </div>
             </div>
@@ -157,7 +158,7 @@ const Home = () => {
                     <h2 className="text-md font-semibold mb-2 text-white">Fourth of July</h2>
                     <p className="text-white font-2xl">Snag a last minute fourth of july campsite</p>  
                   </div>
-                  <button className=" text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</button>
+                  <Link to="/booking" className=" text-white px-4 py-2 rounded-full w-fit self-end" style={{ backgroundColor: '#8AC197' }}>Book Now</Link>
                 </div>
               </div>
             </div>
