@@ -4,6 +4,7 @@ import logo from '../../assets/icon1.png';
 
 import { Link } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
+import Button from '@mui/material/Button';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +32,7 @@ const Navbar = () => {
               <li><Link to="/explore">Explore</Link></li>
               <li><Link to="/how-it-works">How it works</Link></li>
               <li> <Link to="/about">About Us</Link></li> 
-              <li>Log In</li>
+              <li><Link to="/login">Log In</Link></li>
             </ul>
           </div>
 
@@ -45,13 +46,13 @@ const Navbar = () => {
 
         {/* Mobile menu toggle */}
         <div className="md:hidden">
-          <button onClick={toggleMenu}>
+          <Button  onClick={toggleMenu}>
             {isMobileMenuOpen ? (
-              <HiX className="w-6 h-6" />
+              <HiX className="w-6 h-6 text-white" />
             ) : (
-              <HiMenu className="w-6 h-6" />
+              <HiMenu className="w-6 h-6 text-white" />
             )}
-          </button>
+          </Button>
         </div>
 
 
@@ -64,7 +65,7 @@ const Navbar = () => {
           <li><Link to="/explore" onClick={toggleMenu}>Explore</Link></li>
            <li><Link to="/how-it-works" onClick={toggleMenu}>How it works</Link></li>
           <li> <Link to="/about">About Us</Link></li>           
-          <li>Log In</li>
+          <li><Link to="/login">Log In</Link></li>
           <li>
              <Link to="/sign-up" className="Button bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
               Sign Up

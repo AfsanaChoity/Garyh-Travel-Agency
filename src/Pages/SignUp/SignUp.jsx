@@ -1,83 +1,127 @@
-import React from 'react';
-import { FaLock } from 'react-icons/fa'; // For the password lock icon
-import CustomButton from '../../Component/Shared/CustomButton';
-import bgImg from "../../assets/images/signUpImg.jpg"; // Import the background image
+"use client"
 
-const SignUp = () => {
+import { useState } from "react"
+import { Box, Typography, Checkbox, FormControlLabel, } from "@mui/material"
+import { Close } from "@mui/icons-material"
+import NameInput from "./NameInput/NameInput"
+import EmailInput from "../../Component/Shared/EmailInput"
+import PasswordInput from "../../Component/Shared/PasswordInput"
+import CustomButton from "../../Component/Shared/CustomButton"
+import FormBackground from "../../Component/Shared/FormBackground"
+import CloseButton from "../../Component/Shared/CloseButton"
+import { Link } from "react-router-dom"
+
+
+export default function SignUp() {
+  const [formData, setFormData] = useState({
+    nameAndSurname: "",
+    email: "",
+    password: "",
+    agreeToTerms: false,
+  })
+  const [loading, setLoading] = useState(false)
+
+  const handleInputChange = (field) => (event) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: event.target.type === "checkbox" ? event.target.checked : event.target.value,
+    }))
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    setLoading(true)
+
+    // Simulate API call
+    setTimeout(() => {
+      console.log("Form submitted:", formData)
+      setLoading(false)
+    }, 2000)
+  }
+
+  const handleClose = () => {
+    console.log("Navigating to home page")
+  }
+
   return (
-    <div className="min-h-screen relative p-4 flex items-center justify-center bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${bgImg})`, // Background image
-      }}
-    >
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black opacity-40"></div> {/* This darkens the background */}
+    <FormBackground text="Create Account">
+      {/* Close Button */}
+      <CloseButton onClose={handleClose} />
 
-      <div className="bg-white p-8 rounded-xl shadow-xl w-full sm:w-96 opacity-100 z-10">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-6">Create Account</h2>
+      {/* Form */}
+      <Box component="form" onSubmit={handleSubmit} sx={{ width: "100%" }}>
+        {/* Name Input */}
+        <NameInput
+          value={formData.nameAndSurname}
+          onChange={handleInputChange("nameAndSurname")}
+          label="Name and Surname"
+        />
 
-        {/* Form */}
-        <form>
-          {/* Name */}
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-lg font-semibold text-gray-700 mb-2">Name and Surname</label>
-            <input
-              type="text"
-              id="name"
-              placeholder="Enter your name"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-            />
-          </div>
+        {/* Email Input */}
+        <EmailInput value={formData.email} onChange={handleInputChange("email")} label="Email Address" />
 
-          {/* Email */}
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-lg font-semibold text-gray-700 mb-2">Email Address</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Enter your email address"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-            />
-          </div>
+        {/* Password Input */}
+        <PasswordInput value={formData.password} onChange={handleInputChange("password")} label="Password" />
 
-          {/* Password */}
-          <div className="mb-4">
-            <label htmlFor="password" className="block text-lg font-semibold text-gray-700 mb-2">Password</label>
-            <div className="relative">
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+        {/* Terms and Privacy Checkbox */}
+        <Box sx={{ mb: 3 }}>
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={formData.agreeToTerms}
+                onChange={handleInputChange("agreeToTerms")}
+                sx={{
+                  color: "grey.400",
+                  "&.Mui-checked": {
+                    color: "#4db6ac",
+                  },
+                }}
               />
-              <FaLock className="absolute top-1/2 right-3 transform -translate-y-1/2 text-gray-500" />
-            </div>
-          </div>
+            }
+            label={
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                I agree with{" "}
+                <Link href="#" sx={{ color: "#468F9D", textDecoration: "none" }}>
+                  Terms
+                </Link>{" "}
+                and{" "}
+                <Link href="#" sx={{ color: "#468F9D", textDecoration: "none" }}>
+                  Privacy
+                </Link>
+              </Typography>
+            }
+          />
+        </Box>
 
-          {/* Terms and Privacy Checkbox */}
-          <div className="flex items-center mb-4">
-            <input
-              type="checkbox"
-              id="terms"
-              className="h-5 w-5 text-teal-500 border-gray-300 rounded focus:ring-teal-500"
-            />
-            <label htmlFor="terms" className="ml-2 text-gray-700">I agree with <a href="#" className="text-teal-500 hover:underline">Terms and Privacy</a></label>
-          </div>
+        {/* Sign Up Button */}
+        <Link to="/login">
+        <CustomButton
+          text="Sign Up"
+        // onClick={handleSubmit}
 
-          {/* Submit Button */}
-          <CustomButton text={"Sign Up"}></CustomButton>
-        </form>
+        /></Link>
 
         {/* Login Link */}
-        <div className="mt-6 text-center">
-          <p className="text-gray-700">
-            Already have an account?{' '}
-            <a href="#" className="text-teal-500 hover:underline">Log In</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default SignUp;
+        <Typography
+          variant="body2"
+          sx={{
+            textAlign: "center",
+            color: "text.secondary",
+          }}
+        >
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            style={{
+              color: "#468F9D",
+              textDecoration: "none",
+              fontWeight: 500,
+            }}
+          >
+            Log In
+          </Link>
+        </Typography>
+      </Box>
+    </FormBackground>
+  )
+}

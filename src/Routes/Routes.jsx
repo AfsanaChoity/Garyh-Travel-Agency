@@ -6,6 +6,11 @@ import Explore from "../Pages/Explore/Explore";
 import Booking from "../Pages/Booking/Booking";
 import About from "../Pages/About/About";
 import SignUp from "../Pages/SignUp/SignUp";
+import Login from "../Pages/Login/Login";
+import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
+import CheckYourEmail from "../Pages/CheckYourEmail/CheckYourEmail";
+import SetNewPassword from "../Pages/SetNewPassword/SetNewPassword";
+import PasswordReset from "../Pages/PasswordReset/PasswordReset";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +45,27 @@ const router = createBrowserRouter([
     path: "/sign-up",
     element: <SignUp></SignUp>,
   },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgetPassword></ForgetPassword>,
+  },
+  {
+    path: "/check-your-email",
+    element: <CheckYourEmail></CheckYourEmail>,
+  },
+  {
+    path: "/set-new-password",
+    element: <SetNewPassword></SetNewPassword>,
+  },
+  {
+    path: "/password-reset",
+    element: <PasswordReset></PasswordReset>,
+  }
+
 
 
 ]);

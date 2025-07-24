@@ -1,14 +1,30 @@
-import React from 'react'
 
-export default function CustomButton({text}) {
+import { Button } from "@mui/material"
+
+export default function CustomButton({ text, onClick }) {
   return (
-    <div>
-      <button
-            type="submit"
-            className="w-full py-3 bg-[#468F9D] text-white rounded-lg font-semibold text-lg hover:bg-teal-600 transition duration-300"
-          >
-            {text}
-          </button>
-    </div>
+    <Button
+      type="submit"
+      fullWidth
+      variant="contained"
+      onClick={onClick}
+      
+      sx={{
+        backgroundColor: "#468F9D",
+        color: "white",
+        py: 1.5,
+        borderRadius: 3,
+        textTransform: "none",
+        fontSize: "1rem",
+        fontWeight: 500,
+        mb: 3,
+        "&:hover": {
+          backgroundColor: "#26a69a",
+        },
+       
+      }}
+    >
+      { text}
+    </Button>
   )
 }
