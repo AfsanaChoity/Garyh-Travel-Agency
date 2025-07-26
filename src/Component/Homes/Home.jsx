@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div>
-      <Box className="md:mx-20 mx-10 -mt-42 relative z-10">
+      <Box className=" w-[96%] mx-auto -mt-42 relative z-10">
         <Box
           className="md:px-10 px-2 rounded-xl bg-white shadow-md text-center"
           component="form"
@@ -110,7 +110,7 @@ const Home = () => {
       </Box>
       
       <div className=''>
-        <div className=" md:px-20 px-4 mt-20 mb-10">
+        <div className="  mt-20 mb-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Left Section */}
             <div className="flex flex-col h-full ">
@@ -167,14 +167,14 @@ const Home = () => {
       </div>
       
       <div
-        className="md:mx-20 mx-4 px-4 h-[700px] bg-cover bg-center flex items-end justify-start pl-[54px] pb-[25px] "
+        className="container mx-auto px-4 h-[700px] bg-cover bg-center flex items-end justify-start "
         style={{
           backgroundImage: `url(${pic4})`,
         }}
       >
         {/* Styled Button */}
         <div
-          className="bg-[#468F9D] flex flex-col items-start justify-center gap-[10px] text-white text-lg font-semibold w-[513px]  rounded-3xl p-10 "
+          className=" bg-[#468F9D] flex flex-col items-start justify-center gap-[10px] text-white text-lg font-semibold w-[513px]  rounded-3xl p-10 "
   
         >
           <span className='text-left text-xl'>Grow Your campground or glamping business</span>

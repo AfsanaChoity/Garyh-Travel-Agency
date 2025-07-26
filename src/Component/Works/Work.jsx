@@ -11,11 +11,11 @@ import { TbBackground } from 'react-icons/tb';
 const Works = () => {
     return (
         <div>
-            <div className='card'>
+            <div className=''>
                 <div className='text-center mt-15 mb-10 text-3xl font-bold'>
                     <h1>How It Works</h1>
                 </div>
-                <div className="flex items-center justify-center md:px-10">
+                <div className="flex items-center justify-center ">
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-8xl w-full mx-10">
 
@@ -61,7 +61,7 @@ const Works = () => {
                 <div className='text-center text-5xl mt-9 pt-10 font-semibold mb-10'>
                     <p>Don’t just take our words</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:mx-20 mx-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 mb-10 lg:mb-20">
                     
                     {/* Card 1 */}
                     <div className="lg:flex lg:gap-4">

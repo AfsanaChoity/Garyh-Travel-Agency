@@ -4,9 +4,9 @@ import { FaPaperPlane } from "react-icons/fa";  // For the airplane icon in the 
 
 const ContactPage = () => {
   return (
-    <div className="lg:px-20 px-4 pt-20">
+    <div className="container mx-auto pt-20">
       {/* Header Section */}
-      <div className="flex flex-col lg:flex-row gap-10 lg:items-center">
+      <div className="flex flex-col lg:flex-row gap-10 lg:items-center px-4">
         <div className="lg:w-2/5">
           <h2 className=" font-medium text-[#004D6E]">Who we are</h2>
           <h3 className="text-2xl lg:text-4xl text-gray-700 mt-2 font-semibold">We care about customer services</h3>

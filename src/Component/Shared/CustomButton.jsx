@@ -13,11 +13,11 @@ export default function CustomButton({ text, onClick }) {
         backgroundColor: "#468F9D",
         color: "white",
         py: 1.5,
-        borderRadius: 3,
+        borderRadius: 2,
         textTransform: "none",
         fontSize: "1rem",
         fontWeight: 500,
-        mb: 3,
+        
         "&:hover": {
           backgroundColor: "#26a69a",
         },

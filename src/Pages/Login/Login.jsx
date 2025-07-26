@@ -32,6 +32,7 @@ export default function Login() {
     // Simulate API call
     setTimeout(() => {
       console.log("Login submitted:", formData)
+      
       setLoading(false)
     }, 2000)
   }
@@ -62,7 +63,7 @@ export default function Login() {
         <Link to="/">
         <CustomButton
           text="Sign In"
-        //   onClick={handleSubmit}
+          // onClick={handleSubmit}
         
         /></Link>
 

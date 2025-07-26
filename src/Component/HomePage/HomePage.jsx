@@ -9,7 +9,7 @@ import Banner from '../Banner/Banner'
 export default function HomePage() {
   return (
    
-    <>
+    <div className='container mx-auto'>
     
     {/* Banner */}
     <Banner></Banner>
@@ -25,6 +25,6 @@ export default function HomePage() {
     <Works></Works>
     
     
-    </>
+    </div>
   )
 }

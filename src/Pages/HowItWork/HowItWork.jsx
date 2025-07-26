@@ -9,7 +9,7 @@ import backgroundImg2 from '../../assets/images/RV_spot_img.jpg'
 import FAQs from './FAQs/FAQs'
 export default function HowItWork() {
   return (
-    <div>
+    <div className='container mx-auto mb-20'>
 
       {/* Banner */}
       <WorkPageBanner backgroundImg={backgroundImg} heading={"How Does RVnBO Work?"} subheading={"Explore off-grid spots. Park with confidence. Sleep peacefully."} buttonText={"Start Exploring"}></WorkPageBanner>
@@ -41,7 +41,7 @@ export default function HowItWork() {
           heading={"Your next adventure is one click away"}
           subheading={""}
           buttonText={"Find RV Spot Now"}
-          containerClassName="mx-4 lg:mx-20"
+          containerClassName=""
           >
           
         </WorkPageBanner>

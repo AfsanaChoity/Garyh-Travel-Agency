@@ -15,6 +15,7 @@ import StarIcon from "@mui/icons-material/Star";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalCafeIcon from "@mui/icons-material/LocalCafe";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
+import { Link } from "react-router-dom";
 
 const ExploreListingCard = ({
     image,
@@ -184,24 +185,14 @@ const ExploreListingCard = ({
                             p: 1.3
                         }}
                     >
-                        <FavoriteBorderIcon sx={{ color: "#387C61", fontSize: 27 }} />
+                        <FavoriteBorderIcon sx={{ color: "#468F9D", fontSize: 27, background: "" }} />
                     </IconButton>
-                    <Button
-                        fullWidth
-                        variant="contained"
-                        sx={{
-                            background: "#37979C",
-                            borderRadius: 2,
-                            textTransform: "none",
-                            fontWeight: 600,
-                            fontSize: 17,
-                            px: 4,
-                            boxShadow: "none",
-                            ":hover": { background: "#2db6c4" }
-                        }}
+                    <Link to="/booking"
+                    className="w-full bg-[#468F9D] flex justify-center items-center rounded-xl text-white  font-medium md:text-[18px] md:font-semibold"
+                       
                     >
                         View Details
-                    </Button>
+                    </Link>
                 </Box>
             </Box>
         </Box>

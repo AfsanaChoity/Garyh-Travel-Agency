@@ -5,7 +5,7 @@ import ListingPage from './ListingPage/ListingPage';
 
 const Explore = () => {
     return (
-        <div className='mt-8 mx-10'>
+        <div className='container px-4  lg:mx-auto mt-8 '>
             <HotelBookingForm></HotelBookingForm>
             <div className='mt-10 flex flex-col lg:flex-row lg:gap-[8%] '>
                 <div className='lg:w-[20%]'>
