@@ -19,7 +19,7 @@ const ContactPage = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="bg-white p-6 rounded-lg shadow-md lg:w-3/5 mb-10 lg:mb-0">
+        <div className="border border-gray-200 p-6 rounded-lg shadow-md lg:w-3/5 mb-10 lg:mb-0">
           <h3 className="text-2xl font-semibold text-gray-900 mb-4">Get in Touch</h3>
           <form className="">
             <input

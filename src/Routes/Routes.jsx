@@ -12,6 +12,8 @@ import CheckYourEmail from "../Pages/CheckYourEmail/CheckYourEmail";
 import SetNewPassword from "../Pages/SetNewPassword/SetNewPassword";
 import PasswordReset from "../Pages/PasswordReset/PasswordReset";
 import BookingCheckout from "../Pages/ContinueBooking/BookingCheckout";
+import ConfirmBooking from "../Pages/ConfirmBooking/ConfirmBooking";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +26,28 @@ const router = createBrowserRouter([
       },
       {
         path: "/booking",
-        element: <Booking></Booking>,
+        element: (
+          <ProtectedRoute>
+            <Booking />
+          </ProtectedRoute>
+        )
       },
       {
         path: "/booking-checkout",
-        element: <BookingCheckout></BookingCheckout>,
+        element: (
+          <ProtectedRoute>
+            <BookingCheckout></BookingCheckout>
+          </ProtectedRoute>
+        )
+
+      },
+      {
+        path: "/booking-confirm",
+        element: (
+          <ProtectedRoute>
+             <ConfirmBooking></ConfirmBooking>
+          </ProtectedRoute>
+        )
       },
       {
         path: "/explore",
@@ -43,7 +62,7 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About></About>,
       },
-      
+
 
     ]
   },

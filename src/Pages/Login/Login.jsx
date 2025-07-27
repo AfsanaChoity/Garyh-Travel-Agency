@@ -8,7 +8,8 @@ import EmailInput from "../../Component/Shared/EmailInput"
 import PasswordInput from "../../Component/Shared/PasswordInput"
 import ForgotPasswordLink from "../../Component/ForgetPasswordLink/ForgetPasswordLink"
 import CustomButton from "../../Component/Shared/CustomButton"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import { useAuth } from "../../Hooks/UseAuth"
 
 
 export default function Login() {
@@ -16,6 +17,8 @@ export default function Login() {
     email: "",
     password: "",
   })
+  const { login } = useAuth();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false)
 
   const handleInputChange = (field) => (event) => {
@@ -25,23 +28,40 @@ export default function Login() {
     }))
   }
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault()
+  //   setLoading(true)
+
+  //   // Simulate API call
+  //   setTimeout(() => {
+  //     console.log("Login submitted:", formData)
+
+  //     setLoading(false)
+  //   }, 2000)
+  // }
+
   const handleSubmit = async (event) => {
-    event.preventDefault()
-    setLoading(true)
+    event.preventDefault();
+    setLoading(true);
 
-    // Simulate API call
     setTimeout(() => {
-      console.log("Login submitted:", formData)
-      
-      setLoading(false)
-    }, 2000)
-  }
+      const fakeUser = {
+        name: "Afsana",
+        email: formData.email,
+        avatar: "https://i.pravatar.cc/150?img=3", // placeholder image
+      };
 
+      login(fakeUser); // sets user in context
+      console.log("Login submitted:", formData);
+      setLoading(false);
+      navigate("/"); // go to home
+    }, 2000);
+  };
   const handleClose = () => {
     console.log("Navigating to home page")
   }
 
-  
+
 
   return (
     <FormBackground text="Login">
@@ -57,15 +77,15 @@ export default function Login() {
         <PasswordInput value={formData.password} onChange={handleInputChange("password")} label="Password" />
 
         {/* Forgot Password Link */}
-        <ForgotPasswordLink  />
+        <ForgotPasswordLink />
 
         {/* Sign In Button */}
-        <Link to="/">
+
         <CustomButton
           text="Sign In"
-          // onClick={handleSubmit}
-        
-        /></Link>
+          onClick={handleSubmit}
+        ></CustomButton>
+
 
         {/* Sign Up Link */}
         <Typography
@@ -78,7 +98,7 @@ export default function Login() {
           Don't have an account?{" "}
           <Link
             to="/sign-up"
-            
+
             style={{
               color: "#468F9D",
               textDecoration: "none",

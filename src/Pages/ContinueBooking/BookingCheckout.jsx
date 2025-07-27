@@ -4,28 +4,29 @@ import { useState } from "react"
 import { MapPin, Calendar, Shield } from "lucide-react"
 import CustomButton from "../../Component/Shared/CustomButton"
 import img from "../../assets/images/checkoutImg.jpg"
+import { Divider, Radio } from "@mui/material"
+import { Link } from "react-router-dom"
 
 export default function BookingCheckout() {
-  const [paymentOption, setPaymentOption] = useState("full")
+  const [paymentOption, setPaymentOption] =useState('full')
   const [phoneNumber, setPhoneNumber] = useState("")
 
-  const handleContinue = () => {
-    console.log("Continue with booking", { paymentOption, phoneNumber })
-  }
+  
 
-  const handlePaymentChange = (option) => {
-    setPaymentOption(option)
+  const handlePaymentChange = (event) => {
+    setPaymentOption(event.target.value)
   }
 
   return (
-    <div className=" py-8">
+    <div className=" container mx-auto py-8">
       <div className="px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Booking Form */}
           <div className="lg:col-span-2 space-y-6">
             {/* Room Details Card */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-              <div className="flex justify-between items-start mb-4">
+            <div className="rounded-lg shadow-sm border border-gray-200 p-6">
+
+              <div className="md:flex md:justify-between md:items-start mb-4">
                 <div>
                   <h2 className="text-lg font-semibold text-gray-900 mb-2">
                     Superior room - 1 double bed or 2 twin beds
@@ -48,15 +49,15 @@ export default function BookingCheckout() {
               {/* Check-in/Check-out */}
               <div className="flex items-center justify-between bg-gray-50 rounded-lg p-4 mb-4">
                 <div className="text-center">
-                  <div className="font-semibold text-gray-900">Thursday, Dec 8</div>
-                  <div className="text-sm text-gray-600">Check-in</div>
+                  <div className="text-sm font-semibold md:text-[16px] text-gray-900">Thursday, Dec 8</div>
+                  <div className="text-xs md:text-sm text-gray-600">Check-in</div>
                 </div>
                 <div className="flex items-center px-4">
                   <Calendar className="w-6 h-6 text-gray-400" />
                 </div>
                 <div className="text-center">
-                  <div className="font-semibold text-gray-900">Friday, Dec 9</div>
-                  <div className="text-sm text-gray-600">Check-out</div>
+                  <div className="text-sm md:text-[16px] font-semibold text-gray-900">Friday, Dec 9</div>
+                  <div className="text-xs md:text-sm text-gray-600">Check-out</div>
                 </div>
               </div>
 
@@ -66,16 +67,17 @@ export default function BookingCheckout() {
             {/* Payment Options */}
             <div className="">
               <div className="space-y-3">
-                <label className="flex items-center p-4 border rounded-lg cursor-pointer border-gray-200 shadow-sm">
+                <label className="flex items-center p-4 border rounded-lg  border-gray-200 shadow-sm">
                   <input
                     type="radio"
                     name="payment"
                     value="full"
                     checked={paymentOption === "full"}
                     onChange={() => handlePaymentChange("full")}
-                    className="w-4 h-4 mr-3"
+                    className="w-4 h-4 mr-3 cursor-pointer"
                     style={{ accentColor: "#468F9D" }}
                   />
+                 
                   <div className="flex-1">
                     <div className="font-semibold text-gray-900">Pay in full</div>
                     <div className="text-sm text-gray-600">Pay the total and you are all set</div>
@@ -85,7 +87,7 @@ export default function BookingCheckout() {
             </div>
 
             {/* Login/Signup Section */}
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <div className=" rounded-lg shadow-sm border border-gray-200 p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Login or Sign up to book</h3>
 
               <div className="space-y-4">
@@ -107,11 +109,12 @@ export default function BookingCheckout() {
                   </a>
                 </p>
 
-                
-                <CustomButton text="Continue"></CustomButton>
 
-                <div className="text-center">
-                  <span className="text-gray-500">Or</span>
+                <Link to="/booking-confirm"><CustomButton text="Continue"></CustomButton></Link>
+
+                <div className="text-gray-700 mt-4">
+                  
+                  <Divider>OR</Divider>
                 </div>
               </div>
             </div>
@@ -119,25 +122,25 @@ export default function BookingCheckout() {
 
           {/* Right Column - Booking Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sticky top-8">
+            <div className=" rounded-lg shadow-sm border border-gray-200 p-6 sticky top-8">
               {/* Property Image and Details */}
               <div className="flex gap-4 mb-6">
                 <img
                   src={img}
                   alt="CVK Park Bosphorus"
-                  className="w-24 h-24 rounded-lg object-cover"
+                  className="w-26 h-26 rounded-lg object-cover"
                 />
                 <div className="flex-1">
                   <h4 className="font-semibold text-gray-900 mb-1">CVK Park Bosphorus...</h4>
-                  <p className="text-sm text-gray-600 mb-2">Superior room - 1 double bed or 2 twin beds</p>
-                  <div className="flex items-center">
+                  <p className="text-xs md:text-sm text-gray-600 mb-2">Superior room - 1 double bed or 2 twin beds</p>
+                  <div className="flex items-center gap-2">
                     <div
-                      className="px-2 py-1 rounded text-xs text-white font-semibold mr-2"
-                      style={{ backgroundColor: "#468F9D" }}
+                      className="px-1 py-1 rounded text-xs text-[#468F9D] font-semibold border border-[#468F9D]"
+
                     >
                       4.2
                     </div>
-                    <span className="text-sm text-gray-600">Very Good 64 reviews</span>
+                    <span className="text-xs text-gray-700"><span className="font-semibold">Very Good</span> 64 reviews</span>
                   </div>
                 </div>
               </div>
