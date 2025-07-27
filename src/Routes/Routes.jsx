@@ -14,6 +14,9 @@ import PasswordReset from "../Pages/PasswordReset/PasswordReset";
 import BookingCheckout from "../Pages/ContinueBooking/BookingCheckout";
 import ConfirmBooking from "../Pages/ConfirmBooking/ConfirmBooking";
 import ProtectedRoute from "./ProtectedRoute";
+import Inbox from "../Pages/Inbox/Inbox";
+import TravelerLayout from "../Component/Layout/TravelerLayout";
+import TravelerDashboard from "../Pages/TravelerDashboard/TravelerDashboard";
 
 const router = createBrowserRouter([
   {
@@ -62,6 +65,14 @@ const router = createBrowserRouter([
         path: "/about",
         element: <About></About>,
       },
+      {
+        path: "/inbox",
+        element: (
+          <ProtectedRoute>
+            <Inbox></Inbox>
+          </ProtectedRoute>
+        )
+      },
 
 
     ]
@@ -89,8 +100,22 @@ const router = createBrowserRouter([
   {
     path: "/password-reset",
     element: <PasswordReset></PasswordReset>,
-  }
-
+  },
+  {
+    path: "/dashboard",
+    element: <TravelerLayout></TravelerLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: (
+          <ProtectedRoute>
+            <TravelerDashboard></TravelerDashboard>
+          </ProtectedRoute>
+        ),
+      }
+    ]
+  },
+  
 
 
 ]);

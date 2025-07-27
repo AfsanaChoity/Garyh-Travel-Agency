@@ -11,7 +11,7 @@ import CustomButton from "../../Component/Shared/CustomButton"
 import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "../../Hooks/UseAuth"
 
-
+import avatar from "../../assets/images/avatar.jpg"
 export default function Login() {
   const [formData, setFormData] = useState({
     email: "",
@@ -46,9 +46,9 @@ export default function Login() {
 
     setTimeout(() => {
       const fakeUser = {
-        name: "Afsana",
+        name: "Andrew Ainsley",
         email: formData.email,
-        avatar: "https://i.pravatar.cc/150?img=3", // placeholder image
+        avatar: avatar, // placeholder image
       };
 
       login(fakeUser); // sets user in context
