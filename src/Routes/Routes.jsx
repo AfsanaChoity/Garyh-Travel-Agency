@@ -17,6 +17,9 @@ import ProtectedRoute from "./ProtectedRoute";
 import Inbox from "../Pages/Inbox/Inbox";
 import TravelerLayout from "../Component/Layout/TravelerLayout";
 import TravelerDashboard from "../Pages/TravelerDashboard/TravelerDashboard";
+import MyBooking from "../Pages/MyBooking/MyBooking";
+import MyBookingDetails from "../Pages/MyBookingDetails/MyBookingDetails";
+import SavedSpot from "../Pages/SavedSpot/SavedSpot";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +55,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         )
       },
+
       {
         path: "/explore",
         element: <Explore></Explore>,
@@ -73,6 +77,14 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         )
       },
+      {
+        path: "/my-booking/details",
+        element: (
+          <ProtectedRoute>
+            <MyBookingDetails></MyBookingDetails>
+          </ProtectedRoute>
+        )
+      }
 
 
     ]
@@ -112,7 +124,23 @@ const router = createBrowserRouter([
             <TravelerDashboard></TravelerDashboard>
           </ProtectedRoute>
         ),
-      }
+      },
+      {
+        path: "/dashboard/my-booking",
+        element:  (
+          <ProtectedRoute>
+            <MyBooking></MyBooking>
+          </ProtectedRoute>
+        )
+      },
+      {
+        path: "/dashboard/saved-spot",
+        element: (
+          <ProtectedRoute>
+            <SavedSpot></SavedSpot>
+          </ProtectedRoute>
+        )
+      },
     ]
   },
   

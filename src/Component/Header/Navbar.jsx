@@ -10,13 +10,16 @@ import { useAuth } from '../../Hooks/UseAuth';
 const Navbar = () => {
   const { user, logout } = useAuth();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
+  const [isUserMenuOpen, setUserMenuOpen] = useState(false);
+  const toggleUserMenu = () => setUserMenuOpen(!isUserMenuOpen);
+
 
   const toggleMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  
+
 
   return (
     <nav className="">
@@ -53,9 +56,43 @@ const Navbar = () => {
                   </li>
                 </>
 
-                
+
               )}
             </ul>
+
+            {/* Mobile Avatar in the right side  md:hidden fixed top-0 left-0   bg-[#468F9D] shadow-lg z-20 w-full p-6 transition-transform duration-300*/}
+            {user && (
+              <div className="md:hidden relative">
+                <img
+                  src={user.avatar}
+                  className="w-10 h-10 rounded-full cursor-pointer"
+                  onClick={toggleUserMenu}
+                />
+                {/* Dropdown (mobile) */}
+                {isUserMenuOpen && (
+                  <ul className="absolute top-15 -right-4 bg-[#c5e8ec] shadow-md rounded-b-md p-2 w-60 text-gray-900 z-20">
+                    <li className="hover:bg-gray-200 px-2  rounded text-gray-700 font-medium ">
+                      <Link to="/dashboard" onClick={() => setUserMenuOpen(false)}>Dashboard</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 px-4 rounded text-gray-700 font-medium ">
+                      <Link to="/dashboard/my-booking" onClick={() => setUserMenuOpen(false)}>My Booking</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
+                      <Link to="/dashboard/saved-spot" onClick={() => setUserMenuOpen(false)}>Saved Spot</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
+                      <Link to="/setting" onClick={() => setUserMenuOpen(false)}>Profile Setting</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
+                      <Link to="/inbox" onClick={() => setUserMenuOpen(false)}>Inbox</Link>
+                    </li>
+                    <li className="hover:bg-gray-100 px-4 rounded text-gray-700 font-medium">
+                      <button onClick={() => { logout(); setUserMenuOpen(false); }}>Log Out</button>
+                    </li>
+                  </ul>
+                )}
+              </div>
+              )}
           </div>
 
           {/* Sign Up button */}
@@ -67,16 +104,12 @@ const Navbar = () => {
             </div>
           )}
         </div>
-
-
-
-
-      </div>
+    </div>
 
 
       {/* Mobile Menu - Slide from left */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed top-0 left-0  w-64 bg-[#468F9D] shadow-lg z-20 w-full p-6 transition-transform duration-300">
+        <div className="md:hidden fixed top-0 left-0   bg-[#468F9D] shadow-lg z-20 w-full p-6 transition-transform duration-300">
           <button onClick={toggleMenu} className="mb-6 text-white">
             <HiX className="w-6 h-6" />
           </button>
