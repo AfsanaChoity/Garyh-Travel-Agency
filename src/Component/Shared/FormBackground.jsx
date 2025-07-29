@@ -1,9 +1,9 @@
 
-import bgImg from "../../assets/images/signUpImg.jpg";
+import bgImg from "../../assets/BookingPageImages/bookingImg4.jpg";
 export default function FormBackground({ text,icon=null, children}) {
   return (
       <div
-      className="min-h-screen relative p-4 flex items-center justify-center bg-cover bg-center"
+      className="min-h-screen relative p-4 flex items-center justify-center bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: `url(${bgImg})`, // Background image
       }}

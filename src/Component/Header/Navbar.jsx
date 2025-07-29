@@ -80,9 +80,18 @@ const Navbar = () => {
                     <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
                       <Link to="/dashboard/saved-spot" onClick={() => setUserMenuOpen(false)}>Saved Spot</Link>
                     </li>
-                    <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
-                      <Link to="/setting" onClick={() => setUserMenuOpen(false)}>Profile Setting</Link>
+                    <li className="hover:bg-gray-200 px-4 rounded text-gray-700 font-medium">
+                      <Link
+                        to="/dashboard/profile-setting"
+                        onClick={() => {
+                          localStorage.removeItem("profileTab"); // 🧹 Clear saved tab index
+                          setUserMenuOpen(false); // close menu
+                        }}
+                      >
+                        Profile Setting
+                      </Link>
                     </li>
+
                     <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
                       <Link to="/inbox" onClick={() => setUserMenuOpen(false)}>Inbox</Link>
                     </li>
@@ -92,19 +101,19 @@ const Navbar = () => {
                   </ul>
                 )}
               </div>
-              )}
+            )}
           </div>
 
           {/* Sign Up button */}
           {!user && (
             <div className="hidden md:block">
-              <Link to="/sign-up" className="Button px-4 py-2 rounded-lg transition">
+              <Link to="/welcome" className="Button px-4 py-2 rounded-lg transition">
                 Sign Up
               </Link>
             </div>
           )}
         </div>
-    </div>
+      </div>
 
 
       {/* Mobile Menu - Slide from left */}
@@ -124,7 +133,7 @@ const Navbar = () => {
             {!user && (
               <li>
                 <Link
-                  to="/sign-up"
+                  to="/welcome"
                   className=""
                   onClick={toggleMenu}
                 >

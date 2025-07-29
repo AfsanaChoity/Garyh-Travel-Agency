@@ -70,7 +70,7 @@
 }
 
 .logout-button {
-    background-color: transparent;
+    background-color: "white" !important;
     color: #565656;
     border-radius: 4px;
     height: 48px;

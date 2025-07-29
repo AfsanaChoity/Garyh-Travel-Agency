@@ -1,71 +1,76 @@
-"use client"
+import { useState } from "react";
+import { Box, IconButton } from "@mui/material";
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 
-import { useState } from "react"
-import { Box, IconButton } from "@mui/material"
-import { ChevronLeft, ChevronRight } from "@mui/icons-material"
-
-export default function CustomPagination({ totalPages = 5, currentPage = 1, onPageChange }) {
-  const [activePage, setActivePage] = useState(currentPage)
+export default function CustomPagination({ totalPages = 10, currentPage = 1, onPageChange }) {
+  const [activePage, setActivePage] = useState(currentPage);
 
   const handlePageClick = (page) => {
-    setActivePage(page)
-    if (onPageChange) {
-      onPageChange(page)
-    }
-  }
+    setActivePage(page);
+    if (onPageChange) onPageChange(page);
+  };
 
   const handlePrevious = () => {
-    if (activePage > 1) {
-      const newPage = activePage - 1
-      setActivePage(newPage)
-      if (onPageChange) {
-        onPageChange(newPage)
-      }
-    }
-  }
+    if (activePage > 1) handlePageClick(activePage - 1);
+  };
 
   const handleNext = () => {
-    if (activePage < totalPages) {
-      const newPage = activePage + 1
-      setActivePage(newPage)
-      if (onPageChange) {
-        onPageChange(newPage)
-      }
-    }
-  }
+    if (activePage < totalPages) handlePageClick(activePage + 1);
+  };
 
   const renderPageNumbers = () => {
-    const pages = []
-    for (let i = 1; i <= totalPages; i++) {
-      pages.push(
-        <Box
-          key={i}
-          onClick={() => handlePageClick(i)}
-          sx={{
-            width: 40,
-            height: 40,
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            backgroundColor: activePage === i ? "#4db6ac" : "transparent",
-            color: activePage === i ? "white" : "#9e9e9e",
-            fontWeight: activePage === i ? "600" : "400",
-            fontSize: "14px",
-            transition: "all 0.2s ease-in-out",
-            "&:hover": {
-              backgroundColor: activePage === i ? "#26a69a" : "#f5f5f5",
-              color: activePage === i ? "white" : "#666",
-            },
-          }}
-        >
-          {i.toString().padStart(2, "0")}
-        </Box>,
-      )
+    const pages = [];
+
+    // Always show pages 1, 2, 3
+    for (let i = 1; i <= Math.min(3, totalPages); i++) {
+      pages.push(renderPageBox(i));
     }
-    return pages
-  }
+
+    // Show ellipsis if current page is beyond 4 and not near the end
+    if (activePage >= 4 && activePage < totalPages) {
+      pages.push(<Box key="dots1" sx={{ px: 1, color: "#9e9e9e" }}></Box>);
+      pages.push(renderPageBox(activePage));
+    }
+
+    // Ellipsis before last page if current page is not close
+    if (activePage < totalPages - 2) {
+      pages.push(<Box key="dots2" sx={{ px: 1, color: "#9e9e9e" }}>....</Box>);
+    }
+
+    // Always show last page
+    if (totalPages > 3) {
+      pages.push(renderPageBox(totalPages));
+    }
+
+    return pages;
+  };
+
+  const renderPageBox = (page) => (
+    <Box
+      key={page}
+      onClick={() => handlePageClick(page)}
+      sx={{
+        width: 30,
+        height: 30,
+        borderRadius: "50%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        backgroundColor: activePage === page ? "#4db6ac" : "transparent",
+        color: activePage === page ? "white" : "#9e9e9e",
+        fontWeight: activePage === page ? "600" : "400",
+        fontSize: "14px",
+        transition: "all 0.2s ease-in-out",
+        "&:hover": {
+          backgroundColor: activePage === page ? "#26a69a" : "#f5f5f5",
+          color: activePage === page ? "white" : "#666",
+        },
+      }}
+    >
+      {page}
+    </Box>
+  );
 
   return (
     <Box
@@ -77,7 +82,6 @@ export default function CustomPagination({ totalPages = 5, currentPage = 1, onPa
         py: 2,
       }}
     >
-      {/* Previous Button */}
       <IconButton
         onClick={handlePrevious}
         disabled={activePage === 1}
@@ -88,18 +92,13 @@ export default function CustomPagination({ totalPages = 5, currentPage = 1, onPa
           "&:hover": {
             backgroundColor: activePage === 1 ? "transparent" : "#f5f5f5",
           },
-          "&:disabled": {
-            color: "#e0e0e0",
-          },
         }}
       >
         <ChevronLeft />
       </IconButton>
 
-      {/* Page Numbers */}
       {renderPageNumbers()}
 
-      {/* Next Button */}
       <IconButton
         onClick={handleNext}
         disabled={activePage === totalPages}
@@ -110,13 +109,10 @@ export default function CustomPagination({ totalPages = 5, currentPage = 1, onPa
           "&:hover": {
             backgroundColor: activePage === totalPages ? "transparent" : "#f5f5f5",
           },
-          "&:disabled": {
-            color: "#e0e0e0",
-          },
         }}
       >
         <ChevronRight />
       </IconButton>
     </Box>
-  )
+  );
 }

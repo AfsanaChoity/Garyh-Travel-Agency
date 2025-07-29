@@ -40,23 +40,55 @@ export default function Login() {
   //   }, 2000)
   // }
 
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   setLoading(true);
+
+  //   setTimeout(() => {
+  //     const fakeUser = {
+  //       name: "Andrew Ainsley",
+  //       email: formData.email,
+  //       avatar: avatar, // placeholder image
+  //     };
+
+  //     login(fakeUser); // sets user in context
+  //     console.log("Login submitted:", formData);
+  //     setLoading(false);
+  //     navigate("/"); // go to home
+  //   }, 2000);
+  // };
+
+
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    setLoading(true);
+  event.preventDefault();
+  setLoading(true);
 
-    setTimeout(() => {
-      const fakeUser = {
-        name: "Andrew Ainsley",
-        email: formData.email,
-        avatar: avatar, // placeholder image
-      };
+  setTimeout(() => {
+    const fakeUser = {
+      name: "Andrew Ainsley",
+      email: formData.email,
+      avatar: avatar,
+    };
 
-      login(fakeUser); // sets user in context
-      console.log("Login submitted:", formData);
-      setLoading(false);
-      navigate("/"); // go to home
-    }, 2000);
-  };
+    login(fakeUser); // Save user to context
+    console.log("Login submitted:", formData);
+
+    const role = localStorage.getItem("userRole");
+
+    if (role === "traveler") {
+      navigate("/");
+    } else if (role === "landOwner") {
+      navigate("/landowner");
+    } else {
+      navigate("/"); // fallback in case no role is stored
+    }
+
+    // localStorage.removeItem("userRole"); // optional cleanup
+    setLoading(false);
+  }, 2000);
+};
+
+
   const handleClose = () => {
     console.log("Navigating to home page")
   }

@@ -20,6 +20,9 @@ import TravelerDashboard from "../Pages/TravelerDashboard/TravelerDashboard";
 import MyBooking from "../Pages/MyBooking/MyBooking";
 import MyBookingDetails from "../Pages/MyBookingDetails/MyBookingDetails";
 import SavedSpot from "../Pages/SavedSpot/SavedSpot";
+import ProfileSetting from "../Pages/ProfileSetting/ProfileSetting";
+import TravelerORLandOwner from "../Pages/SignUp/TravelerORLandOwner/TravelerORLandOwner";
+import LandingPage from "../LandOwnerPages/LandingPage";
 
 const router = createBrowserRouter([
   {
@@ -90,6 +93,10 @@ const router = createBrowserRouter([
     ]
   },
   {
+    path: "/welcome",
+    element: <TravelerORLandOwner></TravelerORLandOwner>,
+  },
+  {
     path: "/sign-up",
     element: <SignUp></SignUp>,
   },
@@ -141,8 +148,21 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         )
       },
+      {
+        path: "/dashboard/profile-setting",
+        element: (
+          <ProtectedRoute>
+            <ProfileSetting></ProfileSetting>
+          </ProtectedRoute>
+        )
+      }
     ]
   },
+
+  {
+    path: "/landowner",
+    element: <LandingPage></LandingPage>,
+  }
   
 
 

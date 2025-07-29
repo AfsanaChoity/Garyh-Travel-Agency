@@ -3,6 +3,7 @@
 import { ChevronRight } from "lucide-react"
 import img from "../../assets/pic1.jpg"
 import { Divider } from "@mui/material"
+import CustomPagination from "../../Component/Shared/CustomPagination"
 const MyBooking = () => {
     const bookings = [
         {
@@ -186,12 +187,7 @@ const MyBooking = () => {
 
                                     {/* Action Column */}
                                     <div className="col-span-3 md:col-span-3 text-center">
-                                        {/* <button
-                    onClick={() => handleViewDetails(booking.id)}
-                    className="text-blue-600 hover:text-blue-700 text-xs md:text-sm font-medium transition-colors"
-                  >
-                    View Details
-                  </button> */}
+                                       
                                         <span
                                             className={`px-3 py-1 text-xs md:text-sm font-medium rounded-md h-[48px] w-[136px] 
     ${booking.status === "Canceled"
@@ -209,6 +205,10 @@ const MyBooking = () => {
                     </div>
                 </div>
             </div>
+
+
+            {/* Pagination */}
+            <CustomPagination></CustomPagination>
         </div>
     )
 }

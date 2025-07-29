@@ -4,7 +4,7 @@ import { useState } from "react"
 import { TextField, Typography, Box, IconButton, InputAdornment } from "@mui/material"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 
-export default function PasswordInput({ value, onChange, label = "Password" }) {
+export default function PasswordInput({ value, onChange, label = "Password", placeholder = "Enter your password" }) {
   const [showPassword, setShowPassword] = useState(false)
 
   return (
@@ -22,7 +22,7 @@ export default function PasswordInput({ value, onChange, label = "Password" }) {
       <TextField
         fullWidth
         type={showPassword ? "text" : "password"}
-        placeholder="Enter your password"
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
         variant="outlined"
