@@ -5,7 +5,7 @@ import { Tabs, Input, Avatar } from 'antd';
 import './LandownerSettings.css';
 
 import adminImg from '../assets/LandOwnerImages/admin.jpg'
-import cameraSign from '../assets/LandOwnerImages/edit.png'
+import edit from '../assets/LandOwnerImages/edit.png'
 // import viewSign from '/images/view.png'
 // import notViewSign from '/images/notView.png'
 import CustomButton from '../Component/Shared/CustomButton';
@@ -66,8 +66,8 @@ export default function LandownerSettings() {
           <div className="flex flex-col items-center">
             <div className="relative">
               <Avatar size={96} src={adminImg} />
-              <div className="absolute bottom-0 right-0">
-                <img src={cameraSign} alt="camera" />
+              <div className="absolute bottom-0 right-0 z-10 bg-[#468F9D] rounded-full p-1">
+                <img src={edit} alt="camera" />
               </div>
             </div>
             <h2 className="mt-2 text-[30px] font-[Inter] font-medium">Mr. Admin</h2>
@@ -149,9 +149,9 @@ export default function LandownerSettings() {
                       onChange={handleChange}
                       iconRender={(visible) =>
                         visible ? (
-                          <a><FaEye /></a>
+                          <a><FaEye className="text-gray-500"/></a>
                         ) : (
-                          <a> <FaEyeSlash /></a>
+                          <a> <FaEyeSlash  className="text-gray-500"/></a>
                         )
                       }
                       style={{
