@@ -99,7 +99,7 @@ const listings = [
 
 
 const ListingPage = () => (
-   <Box sx={{  width:"100%", pt: 3, pb: 6 }}>
+   <Box sx={{  width:"100%", pb: 6 }}>
     {/* Header */}
     <Box sx={{ display: "flex", justifyContent: "space-between",flexDirection: { xs: "column", md: "row" }, mb: 2, alignItems: "center" }}>
       <Typography variant="subtitle1" sx={{ color: "#1b2c24", fontWeight: 600 }}>

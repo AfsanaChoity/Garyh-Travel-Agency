@@ -9,35 +9,39 @@ import { Button, Menu } from 'antd';
 
 import { MdOutlineDashboard } from "react-icons/md";
 import { RiUserLine } from "react-icons/ri";
-import './sidebar.css';
+
+import '../../../Component/Shared/Sidebar/sidebar.css'
 import { GoStack } from 'react-icons/go';
 import { CiSettings } from 'react-icons/ci';
 import { useAuth } from '../../../Hooks/UseAuth';
+import { FaHandHoldingDollar, FaListUl, FaRegCalendarDays, FaSackDollar } from "react-icons/fa6";
+import { FaStar } from 'react-icons/fa';
 
 
 
 
-
-export default function Sidebar() {
+export default function LandownerSidebar() {
     const location = useLocation();
     const { user, logout } = useAuth();
 
     const items = [
-    { key: '/dashboard', icon: <GoStack style={{ fontSize: '24px' }} />, label: <Link to="/dashboard">Dashboard</Link> },
-    { key: '/dashboard/my-booking', icon: <IoBriefcaseOutline size={24} />, label: <Link to="/dashboard/my-booking">My booking</Link> },
-    { key: '/dashboard/saved-spot', icon: <IoBookmarkOutline size={24} />, label: <Link to="/dashboard/saved-spot">Saved Spot</Link> },
+    { key: '/overview', icon: <GoStack style={{ fontSize: '24px' }} />, label: <Link to="/overview">Overview</Link> },
+    { key: '/dashboard/my-booking', icon: <FaListUl size={24} />, label: <Link to="/dashboard/my-booking">My Listing</Link> },
+    { key: '/overview/manage-booking', icon: <FaRegCalendarDays size={24} />, label: <Link to="/overview/manage-booking">Requests</Link> },
+    { key: '/overview/reviews', icon: <FaStar size={24} />, label: <Link to="/overview/reviews">Reviews</Link> },
+    { key: '/overview/earnings', icon: <FaSackDollar size={24} />, label: <Link to="/overview/earnings">Earnings</Link> },
     {
-        key: '/dashboard/profile-setting',
+        key: '/overview/settings',
         icon: <CiSettings size={24} />,
         label: (
             <Link
-                to="/dashboard/profile-setting"
+                to="/overview/settings"
                 onClick={() => {
                     localStorage.removeItem("profileTab"); // 🧹 clear saved tab
                     sessionStorage.removeItem("profileFirstOpen"); // optional: reset session flag too
                 }}
             >
-                Profile Setting
+                Settings
             </Link>
         ),
     },

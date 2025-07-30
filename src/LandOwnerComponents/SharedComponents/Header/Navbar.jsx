@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import './Navbar.css';
-import logo from '../../assets/icon1.png';
+// import logo from '../../assets/icon1.png';
+import logo from '../../../assets/icon1.png';
 
 import { Link } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
 import Button from '@mui/material/Button';
-import { useAuth } from '../../Hooks/UseAuth';
+import { useAuth } from '../../../Hooks/UseAuth';
+import { FaListUl } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -37,19 +39,19 @@ const Navbar = () => {
           <div>
 
             <ul className="hidden md:flex  items-center font-medium">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/explore">Explore</Link></li>
-              <li><Link to="/how-it-works">How it works</Link></li>
-              <li> <Link to="/about">About Us</Link></li>
-              {!user && <li><Link to="/login">Log In</Link></li>}
+              <li><Link to="/landowner">Home</Link></li>
+              <li><Link to="/landowner/explore">Explore</Link></li>
+              <li><Link to="/landowner/how-it-works">How it works</Link></li>
+              <li> <Link to="/landowner/contact-us">Contact Us</Link></li>
+              {/* {!user && <li><Link to="/login">Log In</Link></li>} */}
 
               {/* avatar */}
               {user && (
                 <>
-                  <li><Link to="/inbox">Inbox</Link></li>
+                  <li><Link to="">Hosting</Link></li>
                   <li className="">
                     <div className="flex items-center gap-2">
-                      <Link to="/dashboard"><img src={user.avatar} className="w-8 h-8 md:w-12 md:h-12 rounded-full" /></Link>
+                      <Link to="/overview"><img src={user.avatar} className="w-8 h-8 md:w-12 md:h-12 rounded-full" /></Link>
                       <p className="text-white">{user.name}</p>
                     </div>
                     {/* <button onClick={logout} className="text-white underline">Logout</button> */}
@@ -72,23 +74,29 @@ const Navbar = () => {
                 {isUserMenuOpen && (
                   <ul className="absolute top-15 -right-4 bg-[#c5e8ec] shadow-md rounded-b-md p-2 w-60 text-gray-900 z-20">
                     <li className="hover:bg-gray-200 px-2  rounded text-gray-700 font-medium ">
-                      <Link to="/dashboard" onClick={() => setUserMenuOpen(false)}>Dashboard</Link>
+                      <Link to="/overview" onClick={() => setUserMenuOpen(false)}>Overview</Link>
                     </li>
                     <li className="hover:bg-gray-200 px-4 rounded text-gray-700 font-medium ">
-                      <Link to="/dashboard/my-booking" onClick={() => setUserMenuOpen(false)}>My Booking</Link>
+                      <Link to="/dashboard/my-booking" onClick={() => setUserMenuOpen(false)}>My Listing</Link>
                     </li>
                     <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
-                      <Link to="/dashboard/saved-spot" onClick={() => setUserMenuOpen(false)}>Saved Spot</Link>
+                      <Link to="/overview/manage-booking" onClick={() => setUserMenuOpen(false)}>Requests</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
+                      <Link to="/overview/reviews" onClick={() => setUserMenuOpen(false)}>Reviews</Link>
+                    </li>
+                    <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
+                      <Link to="/overview/earnings" onClick={() => setUserMenuOpen(false)}>Earnings</Link>
                     </li>
                     <li className="hover:bg-gray-200 px-4 rounded text-gray-700 font-medium">
                       <Link
-                        to="/dashboard/profile-setting"
+                        to="/overview/settings"
                         onClick={() => {
                           localStorage.removeItem("profileTab"); // 🧹 Clear saved tab index
                           setUserMenuOpen(false); // close menu
                         }}
                       >
-                        Profile Setting
+                        Settings
                       </Link>
                     </li>
 
@@ -105,13 +113,13 @@ const Navbar = () => {
           </div>
 
           {/* Sign Up button */}
-          {!user && (
+          {/* {!user && (
             <div className="hidden md:block">
               <Link to="/welcome" className="Button px-4 py-2 rounded-lg transition">
                 Sign Up
               </Link>
             </div>
-          )}
+          )} */}
         </div>
       </div>
 
@@ -123,14 +131,14 @@ const Navbar = () => {
             <HiX className="w-6 h-6" />
           </button>
           <ul className="flex flex-col gap-4 text-white font-medium">
-            <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-            <li><Link to="/explore" onClick={toggleMenu}>Explore</Link></li>
-            <li><Link to="/how-it-works" onClick={toggleMenu}>How it works</Link></li>
-            <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-            {!user && <li><Link to="/login" onClick={toggleMenu}>Log In</Link></li>}
-            {/* {user && <li><Link to="/inbox" onClick={toggleMenu}>Inbox</Link></li>} */}
-            {/* {user && <li><button onClick={logout}>Log Out</button></li>} */}
-            {!user && (
+            <li><Link to="/landowner" onClick={toggleMenu}>Home</Link></li>
+            <li><Link to="/landowner/explore" onClick={toggleMenu}>Explore</Link></li>
+            <li><Link to="/landowner/how-it-works" onClick={toggleMenu}>How it works</Link></li>
+            <li><Link to="/landowner/contact-us" onClick={toggleMenu}>Contact Us</Link></li>
+            <li><Link to="" onClick={toggleMenu}>Hosting</Link></li>
+            {/* {!user && <li><Link to="/login" onClick={toggleMenu}>Log In</Link></li>} */}
+           
+            {/* {!user && (
               <li>
                 <Link
                   to="/welcome"
@@ -140,7 +148,7 @@ const Navbar = () => {
                   Sign Up
                 </Link>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
       )}

@@ -23,6 +23,17 @@ import SavedSpot from "../Pages/SavedSpot/SavedSpot";
 import ProfileSetting from "../Pages/ProfileSetting/ProfileSetting";
 import TravelerORLandOwner from "../Pages/SignUp/TravelerORLandOwner/TravelerORLandOwner";
 import LandingPage from "../LandOwnerPages/LandingPage";
+import LandOwnerLayout from "../LandOwnerComponents/LandOwnerLayout/LandOwnerLayout";
+import LandHowItWorks from "../LandOwnerPages/LandHowItWorks";
+import ContactUs from "../LandOwnerPages/ContactUs";
+import LandExplore from "../LandOwnerPages/LandExplore";
+import LandDetails from "../LandOwnerPages/LandDetails";
+import LandOwnerDashboardLayout from "../LandOwnerComponents/LandOwnerLayout/LandOwnerDashboardLayout";
+import LandOwnerOverview from "../LandOwnerPages/LandOwnerOverview";
+import ManageBooking from "../LandOwnerPages/ManageBooking";
+import LandReviews from "../LandOwnerPages/LandReviews";
+import LandOwnerEarning from "../LandOwnerPages/LandOwnerEarning";
+import LandownerSettings from "../LandOwnerPages/LandownerSettings";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +65,7 @@ const router = createBrowserRouter([
         path: "/booking-confirm",
         element: (
           <ProtectedRoute>
-             <ConfirmBooking></ConfirmBooking>
+            <ConfirmBooking></ConfirmBooking>
           </ProtectedRoute>
         )
       },
@@ -134,7 +145,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/my-booking",
-        element:  (
+        element: (
           <ProtectedRoute>
             <MyBooking></MyBooking>
           </ProtectedRoute>
@@ -159,11 +170,98 @@ const router = createBrowserRouter([
     ]
   },
 
+  // Paths for LandOwner
   {
     path: "/landowner",
-    element: <LandingPage></LandingPage>,
+    element: <ProtectedRoute>
+      <LandOwnerLayout></LandOwnerLayout>
+    </ProtectedRoute>,
+    children: [
+      {
+        path: "/landowner",
+        element: <ProtectedRoute>
+          <LandingPage></LandingPage>
+        </ProtectedRoute>
+      },
+      {
+        path: "/landowner/how-it-works",
+        element: <ProtectedRoute>
+          <LandHowItWorks></LandHowItWorks>
+        </ProtectedRoute>,
+      },
+      {
+        path: "/landowner/contact-us",
+        element: <ProtectedRoute>
+          <ContactUs></ContactUs>
+        </ProtectedRoute>,
+      },
+      {
+        path: "/landowner/explore",
+        element: <ProtectedRoute>
+          <LandExplore></LandExplore>
+        </ProtectedRoute>,
+      },
+      {
+        path: "/landowner/details",
+        element: <ProtectedRoute>
+          <LandDetails></LandDetails>
+        </ProtectedRoute>,
+      },
+    ]
+  },
+
+  // Paths for LandOwner Dashboard
+  {
+    path: "/overview",
+    element: <ProtectedRoute>
+      <LandOwnerDashboardLayout></LandOwnerDashboardLayout>
+    </ProtectedRoute>,
+    children: [
+      {
+        path: "/overview",
+        element: (
+          <ProtectedRoute>
+           <LandOwnerOverview></LandOwnerOverview>
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "/overview/manage-booking",
+        element: (
+          <ProtectedRoute>
+          <ManageBooking></ManageBooking>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/overview/reviews",
+        element: (
+          <ProtectedRoute>
+          <LandReviews></LandReviews>
+          </ProtectedRoute>
+        ),
+      },
+       {
+        path: "/overview/earnings",
+        element: (
+          <ProtectedRoute>
+          <LandOwnerEarning></LandOwnerEarning>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/overview/settings",
+        element: (
+          <ProtectedRoute>
+          <LandownerSettings></LandownerSettings>
+          </ProtectedRoute>
+        ),
+      },
+
+    ]
   }
-  
+
 
 
 ]);

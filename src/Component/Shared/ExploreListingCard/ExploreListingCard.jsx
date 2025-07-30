@@ -45,10 +45,12 @@ const ExploreListingCard = ({
         }}
     >
         {/* Image with overlay */}
-        <Box sx={{ position: "relative",
-                width: { xs: "100%", md: 250 },
-                height: { xs: 280, md: 280 },
-                flexShrink: 0 }}>
+        <Box sx={{
+            position: "relative",
+            width: { xs: "100%", md: 250 },
+            height: { xs: 280, md: 280 },
+            flexShrink: 0
+        }}>
             <CardMedia
                 component="img"
                 image={image}
@@ -73,9 +75,9 @@ const ExploreListingCard = ({
             />
         </Box>
         {/* Info */}
-        <Box sx={{ flex: 1,p: { xs: 2, md: 3 }, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+        <Box sx={{ flex: 1, p: { xs: 2, md: 3 }, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
             {/* Top Row: Title, Location, Price */}
-            <Box sx={{ display: "flex", alignItems: "flex-start",  justifyContent: "space-between" }}>
+            <Box sx={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between" }}>
                 <Box>
                     <Typography variant="h5" fontWeight={700} sx={{ mb: 0.5, lineHeight: 1.2 }}>
                         {title}
@@ -92,7 +94,7 @@ const ExploreListingCard = ({
             </Box>
 
 
-            <Box sx={{ display: "flex",flexDirection: { xs: "column", md: "row" }, justifyContent: "space-between", alignItems: "center" }}>
+            <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "space-between", alignItems: "center" }}>
                 <Box>
                     {/* Stars, Amenities */}
                     <Stack direction="row" alignItems="center" spacing={2} mb={1.1} mt={0.6}>
@@ -143,7 +145,7 @@ const ExploreListingCard = ({
 
                 {/* Price Section */}
                 <Box>
-                    <Box sx={{ textAlign:{xs: "center", md: "right"}, }}>
+                    <Box sx={{ textAlign: { xs: "center", md: "right" }, }}>
                         <Typography variant="body2" color="text.secondary" sx={{ mb: 0.4 }}>
                             starting from
                         </Typography>
@@ -187,9 +189,9 @@ const ExploreListingCard = ({
                     >
                         <FavoriteBorderIcon sx={{ color: "#468F9D", fontSize: 27, background: "" }} />
                     </IconButton>
-                    <Link to="/booking"
-                    className="w-full bg-[#468F9D] flex justify-center items-center rounded-xl text-white  font-medium md:text-[18px] md:font-semibold"
-                       
+                    <Link
+                        to={localStorage.getItem("userRole") === "landOwner" ? "/landowner/details" : "/booking"}
+                        className="w-full bg-[#468F9D] flex justify-center items-center rounded-xl text-white font-medium md:text-[18px] md:font-semibold"
                     >
                         View Details
                     </Link>

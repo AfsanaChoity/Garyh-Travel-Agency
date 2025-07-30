@@ -174,7 +174,7 @@ const Home = () => {
       >
         {/* Styled Button */}
         <div
-          className=" bg-[#468F9D] flex flex-col items-start justify-center gap-[10px] text-white text-lg font-semibold w-[513px]  rounded-3xl p-10 "
+          className=" bg-[#468F9D] flex flex-col items-start justify-center gap-[10px] text-white text-lg font-semibold w-[513px]  rounded-3xl p-10 mb-10"
   
         >
           <span className='text-left text-xl'>Grow Your campground or glamping business</span>

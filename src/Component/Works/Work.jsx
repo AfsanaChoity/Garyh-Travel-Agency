@@ -4,8 +4,8 @@ import { FaSearch, FaMoon } from 'react-icons/fa';
 import { LiaCarSideSolid } from "react-icons/lia";
 import { LiaCheckSolid } from "react-icons/lia";
 import { FaStar } from "react-icons/fa";
-import people1 from "../../assets/people1.png"
-import people2 from "../../assets/people2.png"
+import people1 from "../../assets/people1.png";
+import people2 from "../../assets/people2.png";
 import { TbBackground } from 'react-icons/tb';
 
 const Works = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 
-export default function WorkPageBanner({ backgroundImg, heading, subheading, buttonText, containerClassName = '' }) {
+export default function WorkPageBanner({ backgroundImg, heading, subheading, buttonText, containerClassName = ''                  }) {
   return (
     <div className={`${containerClassName}`}>
       {/* Background Section */}
