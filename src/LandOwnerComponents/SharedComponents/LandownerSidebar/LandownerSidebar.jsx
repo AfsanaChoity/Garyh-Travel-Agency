@@ -26,7 +26,7 @@ export default function LandownerSidebar() {
 
     const items = [
     { key: '/overview', icon: <GoStack style={{ fontSize: '24px' }} />, label: <Link to="/overview">Overview</Link> },
-    { key: '/dashboard/my-booking', icon: <FaListUl size={24} />, label: <Link to="/dashboard/my-booking">My Listing</Link> },
+    { key: '/overview/my-listing', icon: <FaListUl size={24} />, label: <Link to="/overview/my-listing">My Listing</Link> },
     { key: '/overview/manage-booking', icon: <FaRegCalendarDays size={24} />, label: <Link to="/overview/manage-booking">Requests</Link> },
     { key: '/overview/reviews', icon: <FaStar size={24} />, label: <Link to="/overview/reviews">Reviews</Link> },
     { key: '/overview/earnings', icon: <FaSackDollar size={24} />, label: <Link to="/overview/earnings">Earnings</Link> },

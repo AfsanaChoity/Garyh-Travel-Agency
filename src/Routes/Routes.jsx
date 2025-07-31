@@ -34,6 +34,7 @@ import ManageBooking from "../LandOwnerPages/ManageBooking";
 import LandReviews from "../LandOwnerPages/LandReviews";
 import LandOwnerEarning from "../LandOwnerPages/LandOwnerEarning";
 import LandownerSettings from "../LandOwnerPages/LandownerSettings";
+import MyListing from "../LandOwnerPages/MyListing";
 
 const router = createBrowserRouter([
   {
@@ -222,6 +223,15 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
            <LandOwnerOverview></LandOwnerOverview>
+          </ProtectedRoute>
+        ),
+      },
+
+      {
+        path: "/overview/my-listing",
+        element: (
+          <ProtectedRoute>
+          <MyListing></MyListing>
           </ProtectedRoute>
         ),
       },

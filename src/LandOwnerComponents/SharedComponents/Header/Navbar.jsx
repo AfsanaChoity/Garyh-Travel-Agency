@@ -77,7 +77,7 @@ const Navbar = () => {
                       <Link to="/overview" onClick={() => setUserMenuOpen(false)}>Overview</Link>
                     </li>
                     <li className="hover:bg-gray-200 px-4 rounded text-gray-700 font-medium ">
-                      <Link to="/dashboard/my-booking" onClick={() => setUserMenuOpen(false)}>My Listing</Link>
+                      <Link to="/overview/my-listing" onClick={() => setUserMenuOpen(false)}>My Listing</Link>
                     </li>
                     <li className="hover:bg-gray-200 px-4  rounded text-gray-700 font-medium ">
                       <Link to="/overview/manage-booking" onClick={() => setUserMenuOpen(false)}>Requests</Link>
