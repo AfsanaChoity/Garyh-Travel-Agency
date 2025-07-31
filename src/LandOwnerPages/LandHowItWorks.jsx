@@ -6,7 +6,7 @@ import truck from '../assets/images/Truck.png'
 import list from '../assets/LandOwnerImages/List.png';
 import user from '../assets/LandOwnerImages/User.png';
 import earn from '../assets/LandOwnerImages/Earn.png';
-import backgroundImg2 from '../assets/images/RV_spot_img.jpg'
+import backgroundImg2 from '../assets/ChangedImages/img1.jpg'
 import WorkFlexBox from '../Pages/HowItWork/WorkFlexBox/WorkFlexBox';
 import FAQs from '../Pages/HowItWork/FAQs/FAQs';
 

@@ -2,10 +2,13 @@ import { Box, TextField, InputAdornment } from '@mui/material';
 import { FaCar, FaUser, FaCalendarAlt } from 'react-icons/fa';
 import imag from "../../assets/background1.jpg"
 import "./Home.css"
-import pic1 from "../../assets/pic1.jpg"
-import pic3 from "../../assets/pic3.jpg"
-import pic2 from "../../assets/pic2.jpg"
-import pic4 from "../../assets/pic4.jpg"
+import pic1 from "../../assets/ChangedImages/img1.jpg"
+import pic3 from "../../assets/ChangedImages/img2.jpg"
+import pic2 from "../../assets/ChangedImages/img3.jpg"
+import pic4 from "../../assets/ChangedImages/img4.jpg"
+import pic5 from "../../assets/ChangedImages/img5.jpg"
+import pic6 from "../../assets/ChangedImages/img6.jpg"
+import pic7 from "../../assets/images/explore/img4.jpg"
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -120,17 +123,17 @@ const Home = () => {
                 <div className=" flex h-70 lg:h-100">
                   {/* Left 2 images - 25% width, full height, no padding */}
                   <div className="flex flex-col justify-between w-1/4 gap-2">
-                    <img src={pic3} alt="Left 1" className="w-full h-1/2 object-cover" />
+                    <img src={pic1} alt="Left 1" className="w-full h-1/2 object-cover" />
                     <img src={pic2} alt="Left 2" className="w-full h-1/2 object-cover" />
                   </div>
                   {/* Center image - 50% width, full height */}
                 <div className="w-1/2 px-2">
-                   <img src={pic1} alt="Center" className="w-full h-full object-cover" />
+                   <img src={pic3} alt="Center" className="w-full h-full object-cover" />
                 </div>
                   {/* Right 2 images - 25% width, full height, no padding */}
                   <div className="flex flex-col gap-2 justify-between w-1/4">
-                      <img src={pic3} alt="Right 1" className="w-full h-1/2 object-cover" />
-                      <img src={pic2} alt="Right 2" className="w-full h-1/2 object-cover" />
+                      <img src={pic4} alt="Right 1" className="w-full h-1/2 object-cover" />
+                      <img src={pic5} alt="Right 2" className="w-full h-1/2 object-cover" />
                   </div>
                 </div> 
                 {/* Text + Button */}
@@ -149,7 +152,7 @@ const Home = () => {
               <div className=" rounded-sm overflow-hidden">
                 {/* Single Image */}
                 <div className=' h-70 lg:h-100'>
-                  <img src={imag} alt="Featured" className=" w-full h-full object-cover rounded-t-lg" />
+                  <img src={pic6} alt="Featured" className=" w-full h-full object-cover rounded-t-lg" />
                 </div>
 
                 {/* Text + Button */}
@@ -167,9 +170,9 @@ const Home = () => {
       </div>
       
       <div
-        className="container mx-auto px-4 h-[700px] bg-cover bg-center flex items-end justify-start "
+        className="container mx-auto px-4 h-[700px] bg-cover bg-bottom flex items-end justify-start "
         style={{
-          backgroundImage: `url(${pic4})`,
+          backgroundImage: `url(${pic7})`,
         }}
       >
         {/* Styled Button */}

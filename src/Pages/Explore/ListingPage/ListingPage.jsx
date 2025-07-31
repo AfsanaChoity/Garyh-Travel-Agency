@@ -2,12 +2,12 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import ExploreListingCard from '../../../Component/Shared/ExploreListingCard/ExploreListingCard';
 
-import img1 from "../../../assets/images/explore/img1.jpg";
-import img2 from "../../../assets/images/explore/img2.jpg";
-import img3 from "../../../assets/images/explore/img3.jpg";
-import img4 from "../../../assets/images/explore/img4.jpg";
-import img5 from "../../../assets/images/explore/img5.jpg";
-import img6 from "../../../assets/images/explore/img6.jpg";
+import img1 from "../../../assets/ChangedImages/img1.jpg";
+import img2 from "../../../assets/ChangedImages/img2.jpg";
+import img3 from "../../../assets/ChangedImages/img3.jpg";
+import img4 from "../../../assets/ChangedImages/img4.jpg";
+import img5 from "../../../assets/ChangedImages/img5.jpg";
+import img6 from "../../../assets/ChangedImages/img6.jpg";
 
 
 // Example data

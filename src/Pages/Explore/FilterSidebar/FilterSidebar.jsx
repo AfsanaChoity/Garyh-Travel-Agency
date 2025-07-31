@@ -13,6 +13,7 @@ import {
   Stack,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SharedHeading from '../../../Component/Shared/SharedHeading';
 
 const amenitiesList = [
   'Water',
@@ -20,11 +21,42 @@ const amenitiesList = [
   'Sewage Hookups',
   'Firepit',
 ];
+const typeToSiteLists = [
+  'Boondocking',
+  'RV Storage',
+  'Full Hookups',
+  'Some Hookups',
+]
+
+const typeToRV = [
+  'Class A',
+  'Class B',
+  'Class C',
+  '5th Wheel',
+  'Towable',
+]
+
+const lengthOptions = [
+  '20 ft',
+  '30 ft',
+  '40 ft',
+]
+
+const numberOfSlides = [
+  '0 Slide',
+  '1 Slide',
+  '2 Slides',
+  '3 Slides',
+]
 
 const FilterSidebar = () => {
   const [price, setPrice] = React.useState([500, 20000]);
   const [rating, setRating] = React.useState(null);
   const [amenities, setAmenities] = React.useState([]);
+  const [selectedTypes, setSelectedTypes] = React.useState([]);
+  const [selectedRVTypes, setSelectedRVTypes] = React.useState([]);
+  const [selectedLength, setSelectedLength] = React.useState([]);
+  const [selectedSlides, setSelectedSlides] = React.useState([]);
 
   const handleSlider = (event, newValue) => setPrice(newValue);
 
@@ -37,8 +69,35 @@ const FilterSidebar = () => {
     );
   };
 
+  const handleTypeSelection = (event) => {
+    const { value, checked } = event.target;
+    setSelectedTypes((prev) =>
+      checked ? [...prev, value] : prev.filter((item) => item !== value)
+    );
+  };
+
+  const handleRVTypeSelection = (event) => {
+    const { value, checked } = event.target;
+    setSelectedRVTypes((prev) =>
+      checked ? [...prev, value] : prev.filter((item) => item !== value)
+    );
+  }
+
+  const handleLengthSelection = (event) => {
+    const { value, checked } = event.target;
+    setSelectedLength((prev) =>
+      checked ? [...prev, value] : prev.filter((item) => item !== value)
+    );
+  }
+
+  const handleSlideSelection = (event) => {
+    const { value, checked } = event.target;
+    setSelectedSlides((prev) =>
+      checked ? [...prev, value] : prev.filter((item) => item !== value)
+    );
+  }
   return (
-    <Box sx={{  }}>
+    <Box sx={{}}>
       <Typography variant="h6" fontWeight={600} gutterBottom>
         Filters
       </Typography>
@@ -69,7 +128,7 @@ const FilterSidebar = () => {
       {/* Rating Accordion */}
       <Accordion defaultExpanded sx={{ boxShadow: 'none' }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />} sx={{ px: 0 }}>
-          <Typography fontWeight={500}>Rating</Typography>
+          <Typography fontWeight={700}>Rating</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{ px: 0 }}>
           <Stack direction="row" spacing={1} mb={1}>
@@ -117,6 +176,117 @@ const FilterSidebar = () => {
               />
             }
             label={<Typography fontSize={15}>{amenity}</Typography>}
+            sx={{ mb: 0.5 }}
+          />
+        ))}
+      </FormGroup>
+
+
+      {/* Type to site Checkboxes */}
+      <div className='my-4'>
+        <SharedHeading text="Type to site"></SharedHeading>
+      </div>
+      <FormGroup sx={{ mt: 1 }}>
+        {typeToSiteLists.map((list) => (
+          <FormControlLabel
+            key={list}
+            control={
+              <Checkbox
+                checked={selectedTypes.includes(list)}
+                onChange={handleTypeSelection}
+                value={list}
+                sx={{
+                  color: 'teal',
+                  '&.Mui-checked': { color: 'teal' },
+                  p: 0.5,
+                }}
+              />
+            }
+            label={<Typography fontSize={15}>{list}</Typography>}
+            sx={{ mb: 0.5 }}
+          />
+        ))}
+      </FormGroup>
+
+
+
+      {/* Type to RV Checkboxes */}
+      <div className='my-4'>
+        <SharedHeading text="Type to RV"></SharedHeading>
+      </div>
+      <FormGroup sx={{ mt: 1 }}>
+        {typeToRV.map((list) => (
+          <FormControlLabel
+            key={list}
+            control={
+              <Checkbox
+                checked={selectedRVTypes.includes(list)}
+                onChange={handleRVTypeSelection}
+                value={list}
+                sx={{
+                  color: 'teal',
+                  '&.Mui-checked': { color: 'teal' },
+                  p: 0.5,
+                }}
+              />
+            }
+            label={<Typography fontSize={15}>{list}</Typography>}
+            sx={{ mb: 0.5 }}
+          />
+        ))}
+      </FormGroup>
+
+
+
+       {/* Length Checkboxes */}
+      <div className='my-4'>
+        <SharedHeading text="Length"></SharedHeading>
+      </div>
+      <FormGroup sx={{ mt: 1 }}>
+        {lengthOptions.map((list) => (
+          <FormControlLabel
+            key={list}
+            control={
+              <Checkbox
+                checked={selectedLength.includes(list)}
+                onChange={handleLengthSelection}
+                value={list}
+                sx={{
+                  color: 'teal',
+                  '&.Mui-checked': { color: 'teal' },
+                  p: 0.5,
+                }}
+              />
+            }
+            label={<Typography fontSize={15}>{list}</Typography>}
+            sx={{ mb: 0.5 }}
+          />
+        ))}
+      </FormGroup>
+
+
+
+       {/* Number of slides */}
+      <div className='my-4'>
+        <SharedHeading text="Number Of Slieds"></SharedHeading>
+      </div>
+      <FormGroup sx={{ mt: 1 }}>
+        {numberOfSlides.map((list) => (
+          <FormControlLabel
+            key={list}
+            control={
+              <Checkbox
+                checked={selectedSlides.includes(list)}
+                onChange={handleSlideSelection}
+                value={list}
+                sx={{
+                  color: 'teal',
+                  '&.Mui-checked': { color: 'teal' },
+                  p: 0.5,
+                }}
+              />
+            }
+            label={<Typography fontSize={15}>{list}</Typography>}
             sx={{ mb: 0.5 }}
           />
         ))}

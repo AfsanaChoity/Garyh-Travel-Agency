@@ -5,11 +5,11 @@ import { Divider, IconButton } from '@mui/material';
 import { FaRegHeart } from 'react-icons/fa';
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import CustomButton from '../Shared/CustomButton';
-import img1 from '../../assets/BookingPageImages/bookingImg1.jpg';
-import img2 from '../../assets/BookingPageImages/bookingImg2.jpg';
-import img3 from '../../assets/BookingPageImages/bookingImg3.jpg';
-import img4 from '../../assets/BookingPageImages/bookingImg4.jpg';
-import img5 from '../../assets/BookingPageImages/bookingImg5.jpg';
+import img1 from '../../assets/ChangedImages/img1.jpg';
+import img2 from '../../assets/ChangedImages/img2.jpg';
+import img3 from '../../assets/ChangedImages/img3.jpg';
+import img4 from '../../assets/ChangedImages/img4.jpg';
+import img5 from '../../assets/ChangedImages/img5.jpg';
 import { Link } from 'react-router-dom';
 
 export default function BookingPageTopSection() {

@@ -5,7 +5,7 @@ import WorkFlexBox from './WorkFlexBox/WorkFlexBox'
 import search from '../../assets/images/search.png'
 import truck from '../../assets/images/Truck.png'
 import moon from '../../assets/images/moon.png'
-import backgroundImg2 from '../../assets/images/RV_spot_img.jpg'
+import backgroundImg2 from '../../assets/ChangedImages/img1.jpg'
 import FAQs from './FAQs/FAQs'
 export default function HowItWork() {
   return (
